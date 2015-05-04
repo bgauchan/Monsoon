@@ -1,0 +1,424 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DE5158081AF83647000404A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5158071AF83647000404A1 /* AppDelegate.swift */; };
+		DE51580A1AF83647000404A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5158091AF83647000404A1 /* ViewController.swift */; };
+		DE51580D1AF83647000404A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE51580B1AF83647000404A1 /* Main.storyboard */; };
+		DE51580F1AF83647000404A1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE51580E1AF83647000404A1 /* Images.xcassets */; };
+		DE5158121AF83647000404A1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE5158101AF83647000404A1 /* LaunchScreen.xib */; };
+		DE51581E1AF83647000404A1 /* MonsoonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE51581D1AF83647000404A1 /* MonsoonTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DE5158181AF83647000404A1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE5157FA1AF83647000404A1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE5158011AF83647000404A1;
+			remoteInfo = Monsoon;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DE5158021AF83647000404A1 /* Monsoon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Monsoon.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE5158061AF83647000404A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE5158071AF83647000404A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DE5158091AF83647000404A1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DE51580C1AF83647000404A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DE51580E1AF83647000404A1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		DE5158111AF83647000404A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		DE5158171AF83647000404A1 /* MonsoonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MonsoonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE51581C1AF83647000404A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE51581D1AF83647000404A1 /* MonsoonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsoonTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DE5157FF1AF83647000404A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE5158141AF83647000404A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DE5157F91AF83647000404A1 = {
+			isa = PBXGroup;
+			children = (
+				DE5158041AF83647000404A1 /* Monsoon */,
+				DE51581A1AF83647000404A1 /* MonsoonTests */,
+				DE5158031AF83647000404A1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DE5158031AF83647000404A1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DE5158021AF83647000404A1 /* Monsoon.app */,
+				DE5158171AF83647000404A1 /* MonsoonTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DE5158041AF83647000404A1 /* Monsoon */ = {
+			isa = PBXGroup;
+			children = (
+				DE5158071AF83647000404A1 /* AppDelegate.swift */,
+				DE5158091AF83647000404A1 /* ViewController.swift */,
+				DE51580B1AF83647000404A1 /* Main.storyboard */,
+				DE51580E1AF83647000404A1 /* Images.xcassets */,
+				DE5158101AF83647000404A1 /* LaunchScreen.xib */,
+				DE5158051AF83647000404A1 /* Supporting Files */,
+			);
+			path = Monsoon;
+			sourceTree = "<group>";
+		};
+		DE5158051AF83647000404A1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DE5158061AF83647000404A1 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DE51581A1AF83647000404A1 /* MonsoonTests */ = {
+			isa = PBXGroup;
+			children = (
+				DE51581D1AF83647000404A1 /* MonsoonTests.swift */,
+				DE51581B1AF83647000404A1 /* Supporting Files */,
+			);
+			path = MonsoonTests;
+			sourceTree = "<group>";
+		};
+		DE51581B1AF83647000404A1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DE51581C1AF83647000404A1 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DE5158011AF83647000404A1 /* Monsoon */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE5158211AF83647000404A1 /* Build configuration list for PBXNativeTarget "Monsoon" */;
+			buildPhases = (
+				DE5157FE1AF83647000404A1 /* Sources */,
+				DE5157FF1AF83647000404A1 /* Frameworks */,
+				DE5158001AF83647000404A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Monsoon;
+			productName = Monsoon;
+			productReference = DE5158021AF83647000404A1 /* Monsoon.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DE5158161AF83647000404A1 /* MonsoonTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE5158241AF83647000404A1 /* Build configuration list for PBXNativeTarget "MonsoonTests" */;
+			buildPhases = (
+				DE5158131AF83647000404A1 /* Sources */,
+				DE5158141AF83647000404A1 /* Frameworks */,
+				DE5158151AF83647000404A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DE5158191AF83647000404A1 /* PBXTargetDependency */,
+			);
+			name = MonsoonTests;
+			productName = MonsoonTests;
+			productReference = DE5158171AF83647000404A1 /* MonsoonTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DE5157FA1AF83647000404A1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Bardan Gauchan";
+				TargetAttributes = {
+					DE5158011AF83647000404A1 = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					DE5158161AF83647000404A1 = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = DE5158011AF83647000404A1;
+					};
+				};
+			};
+			buildConfigurationList = DE5157FD1AF83647000404A1 /* Build configuration list for PBXProject "Monsoon" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DE5157F91AF83647000404A1;
+			productRefGroup = DE5158031AF83647000404A1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DE5158011AF83647000404A1 /* Monsoon */,
+				DE5158161AF83647000404A1 /* MonsoonTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DE5158001AF83647000404A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE51580D1AF83647000404A1 /* Main.storyboard in Resources */,
+				DE5158121AF83647000404A1 /* LaunchScreen.xib in Resources */,
+				DE51580F1AF83647000404A1 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE5158151AF83647000404A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DE5157FE1AF83647000404A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE51580A1AF83647000404A1 /* ViewController.swift in Sources */,
+				DE5158081AF83647000404A1 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE5158131AF83647000404A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE51581E1AF83647000404A1 /* MonsoonTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DE5158191AF83647000404A1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE5158011AF83647000404A1 /* Monsoon */;
+			targetProxy = DE5158181AF83647000404A1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DE51580B1AF83647000404A1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE51580C1AF83647000404A1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DE5158101AF83647000404A1 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE5158111AF83647000404A1 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DE51581F1AF83647000404A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DE5158201AF83647000404A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DE5158221AF83647000404A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Monsoon/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DE5158231AF83647000404A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Monsoon/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		DE5158251AF83647000404A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MonsoonTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Monsoon.app/Monsoon";
+			};
+			name = Debug;
+		};
+		DE5158261AF83647000404A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MonsoonTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Monsoon.app/Monsoon";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DE5157FD1AF83647000404A1 /* Build configuration list for PBXProject "Monsoon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE51581F1AF83647000404A1 /* Debug */,
+				DE5158201AF83647000404A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE5158211AF83647000404A1 /* Build configuration list for PBXNativeTarget "Monsoon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE5158221AF83647000404A1 /* Debug */,
+				DE5158231AF83647000404A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DE5158241AF83647000404A1 /* Build configuration list for PBXNativeTarget "MonsoonTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE5158251AF83647000404A1 /* Debug */,
+				DE5158261AF83647000404A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DE5157FA1AF83647000404A1 /* Project object */;
+}

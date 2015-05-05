@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--WatchlistVC-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Monsoon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="WatchlistVC" customModule="Monsoon" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -23,40 +23,73 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="uxE-k3-SwP"/>
                                     <barButtonItem title="ALL SHOWS" id="wRi-5w-vea"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="kva-mn-SnQ"/>
-                                    <barButtonItem title="YET TO START" id="1gL-fa-mEw"/>
+                                    <barButtonItem title="YET TO START" style="plain" id="1gL-fa-mEw"/>
                                 </items>
                             </toolbar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="DH8-0R-rIB">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="watchlistCell" id="eJN-Cv-hl5">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eJN-Cv-hl5" id="zip-W7-iUf">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="XyY-kD-Npm"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="TCL-Vm-JDH"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="vYi-9u-jZb" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="4NU-vf-1t9"/>
+                            <constraint firstItem="DH8-0R-rIB" firstAttribute="top" secondItem="vYi-9u-jZb" secondAttribute="bottom" id="O1D-wK-yHW"/>
+                            <constraint firstItem="DH8-0R-rIB" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="Xfn-Ha-O8p"/>
                             <constraint firstAttribute="trailing" secondItem="vYi-9u-jZb" secondAttribute="trailing" id="Z7P-L7-Nww"/>
+                            <constraint firstItem="DH8-0R-rIB" firstAttribute="trailing" secondItem="vYi-9u-jZb" secondAttribute="trailing" id="j0F-ds-mJ2"/>
                             <constraint firstItem="vYi-9u-jZb" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="16" id="zbf-Ql-FRd">
                                 <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
+                            <constraint firstItem="DH8-0R-rIB" firstAttribute="leading" secondItem="vYi-9u-jZb" secondAttribute="leading" id="zgk-d1-eEI"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="vYi-9u-jZb"/>
+                                <exclude reference="DH8-0R-rIB"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="4NU-vf-1t9"/>
                                 <exclude reference="Z7P-L7-Nww"/>
                                 <exclude reference="zbf-Ql-FRd"/>
+                                <exclude reference="O1D-wK-yHW"/>
+                                <exclude reference="Xfn-Ha-O8p"/>
+                                <exclude reference="j0F-ds-mJ2"/>
+                                <exclude reference="zgk-d1-eEI"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="vYi-9u-jZb"/>
+                                <include reference="DH8-0R-rIB"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="4NU-vf-1t9"/>
                                 <include reference="Z7P-L7-Nww"/>
                                 <include reference="zbf-Ql-FRd"/>
+                                <include reference="O1D-wK-yHW"/>
+                                <include reference="Xfn-Ha-O8p"/>
+                                <include reference="j0F-ds-mJ2"/>
+                                <include reference="zgk-d1-eEI"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="r7f-kJ-IAm"/>
+                    <connections>
+                        <outlet property="watchlist" destination="DH8-0R-rIB" id="Qhz-Oy-0w2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

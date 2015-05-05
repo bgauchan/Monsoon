@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DE5158081AF83647000404A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5158071AF83647000404A1 /* AppDelegate.swift */; };
-		DE51580A1AF83647000404A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5158091AF83647000404A1 /* ViewController.swift */; };
+		DE51580A1AF83647000404A1 /* WatchlistVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5158091AF83647000404A1 /* WatchlistVC.swift */; };
 		DE51580D1AF83647000404A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE51580B1AF83647000404A1 /* Main.storyboard */; };
 		DE51580F1AF83647000404A1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE51580E1AF83647000404A1 /* Images.xcassets */; };
 		DE5158121AF83647000404A1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE5158101AF83647000404A1 /* LaunchScreen.xib */; };
@@ -29,7 +29,7 @@
 		DE5158021AF83647000404A1 /* Monsoon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Monsoon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE5158061AF83647000404A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE5158071AF83647000404A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DE5158091AF83647000404A1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DE5158091AF83647000404A1 /* WatchlistVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistVC.swift; sourceTree = "<group>"; };
 		DE51580C1AF83647000404A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DE51580E1AF83647000404A1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DE5158111AF83647000404A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				DE5158071AF83647000404A1 /* AppDelegate.swift */,
-				DE5158091AF83647000404A1 /* ViewController.swift */,
+				DE5158091AF83647000404A1 /* WatchlistVC.swift */,
 				DE51580B1AF83647000404A1 /* Main.storyboard */,
 				DE51580E1AF83647000404A1 /* Images.xcassets */,
 				DE5158101AF83647000404A1 /* LaunchScreen.xib */,
@@ -212,7 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE51580A1AF83647000404A1 /* ViewController.swift in Sources */,
+				DE51580A1AF83647000404A1 /* WatchlistVC.swift in Sources */,
 				DE5158081AF83647000404A1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,6 +409,7 @@
 				DE5158231AF83647000404A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DE5158241AF83647000404A1 /* Build configuration list for PBXNativeTarget "MonsoonTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +418,7 @@
 				DE5158261AF83647000404A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

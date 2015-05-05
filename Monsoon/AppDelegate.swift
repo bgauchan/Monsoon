@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,6 +25,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // change navigation item title color
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "Futura", size: 20)!]
+        
+        // Parse Setup
+        Parse.enableLocalDatastore()
+        
+        // Initialize Parse.
+        Parse.setApplicationId("IP1rs5my0SYAbjLLUksy2D83vTWQGnNh2xp1Frsb",
+            clientKey: "eeEM2IgofWFTRmYe4F62UoOLNQq8Tf63IUU7gsq9")
+        
+        // [Optional] Track statistics around application opens.
+        PFAnalytics.trackAppOpenedWithLaunchOptionsInBackground(launchOptions, block: nil)
         
         return true
     }

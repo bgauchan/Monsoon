@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <scenes>
-        <!--WatchlistVC-->
+        <!--Monsoon-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="WatchlistVC" customModule="Monsoon" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,24 +16,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vYi-9u-jZb">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYi-9u-jZb">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
-                                    <barButtonItem title="HAS ENDED" id="kXM-lz-da0"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="uxE-k3-SwP"/>
-                                    <barButtonItem title="ALL SHOWS" id="wRi-5w-vea"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="kva-mn-SnQ"/>
-                                    <barButtonItem title="YET TO START" style="plain" id="1gL-fa-mEw"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="rQr-VS-dhD"/>
+                                    <barButtonItem title="HAS ENDED" id="kXM-lz-da0">
+                                        <color key="tintColor" red="0.69803921568627447" green="0.69803921568627447" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem width="15" style="plain" systemItem="fixedSpace" id="8oY-IR-ib1"/>
+                                    <barButtonItem title="ALL SHOWS" id="wRi-5w-vea">
+                                        <color key="tintColor" red="0.69803921568627447" green="0.69803921568627447" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem width="15" style="plain" systemItem="fixedSpace" id="wDM-cX-1ru"/>
+                                    <barButtonItem title="YET TO START" style="plain" id="1gL-fa-mEw">
+                                        <color key="tintColor" red="0.69803921568627447" green="0.69803921568627447" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="UxD-Ef-oJP"/>
                                 </items>
                             </toolbar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="DH8-0R-rIB">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="watchlistCell" id="eJN-Cv-hl5">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="watchlistCell" textLabel="vzA-cC-aNv" style="IBUITableViewCellStyleDefault" id="eJN-Cv-hl5">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eJN-Cv-hl5" id="zip-W7-iUf">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vzA-cC-aNv">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact">
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    </variation>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -86,9 +106,15 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="r7f-kJ-IAm"/>
+                    <navigationItem key="navigationItem" title="Monsoon" id="r7f-kJ-IAm">
+                        <barButtonItem key="leftBarButtonItem" systemItem="trash" id="l4v-Q9-avP"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="SPa-yJ-hI6"/>
+                    </navigationItem>
                     <connections>
+                        <outlet property="allShows" destination="wRi-5w-vea" id="z6Z-Wc-Exm"/>
+                        <outlet property="hasEnded" destination="kXM-lz-da0" id="bLK-MB-2SQ"/>
                         <outlet property="watchlist" destination="DH8-0R-rIB" id="Qhz-Oy-0w2"/>
+                        <outlet property="yetToStart" destination="1gL-fa-mEw" id="HFR-0j-pug"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

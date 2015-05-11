@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14E11f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pAC-8E-TuI">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Monsoon-->
@@ -21,40 +22,91 @@
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="rQr-VS-dhD"/>
-                                    <barButtonItem title="HAS ENDED" id="kXM-lz-da0">
+                                    <barButtonItem title="WATCHLIST" id="kXM-lz-da0">
                                         <color key="tintColor" red="0.69803921568627447" green="0.69803921568627447" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
                                     </barButtonItem>
-                                    <barButtonItem width="15" style="plain" systemItem="fixedSpace" id="8oY-IR-ib1"/>
-                                    <barButtonItem title="ALL SHOWS" id="wRi-5w-vea">
-                                        <color key="tintColor" red="0.69803921568627447" green="0.69803921568627447" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
-                                    </barButtonItem>
-                                    <barButtonItem width="15" style="plain" systemItem="fixedSpace" id="wDM-cX-1ru"/>
-                                    <barButtonItem title="YET TO START" style="plain" id="1gL-fa-mEw">
+                                    <barButtonItem width="40" style="plain" systemItem="fixedSpace" id="8oY-IR-ib1"/>
+                                    <barButtonItem title="ARCHIVED" style="plain" id="1gL-fa-mEw">
                                         <color key="tintColor" red="0.69803921568627447" green="0.69803921568627447" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="UxD-Ef-oJP"/>
                                 </items>
                             </toolbar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="DH8-0R-rIB">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="105" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="DH8-0R-rIB">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="watchlistCell" textLabel="vzA-cC-aNv" style="IBUITableViewCellStyleDefault" id="eJN-Cv-hl5">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="watchlistCell" rowHeight="105" id="eJN-Cv-hl5" customClass="WatchlistCell" customModule="Monsoon" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eJN-Cv-hl5" id="zip-W7-iUf">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vzA-cC-aNv">
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vae-XU-8Pp">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <color key="backgroundColor" red="0.46160827020202022" green="0.46160827020202022" blue="0.46160827020202022" alpha="1" colorSpace="calibratedRGB"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MuT-Ea-oyh">
+                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                    <color key="backgroundColor" red="0.0078431372550000003" green="0.0078431372550000003" blue="0.23239617600000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
-                                                    <variation key="widthClass=compact">
-                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    </variation>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="MuT-Ea-oyh" firstAttribute="top" secondItem="zip-W7-iUf" secondAttribute="top" constant="5" id="3Du-00-fSs"/>
+                                                <constraint firstItem="MuT-Ea-oyh" firstAttribute="leading" secondItem="Vae-XU-8Pp" secondAttribute="trailing" constant="-1" id="4r0-ZC-TEc">
+                                                    <variation key="widthClass=compact" constant="0.0"/>
+                                                </constraint>
+                                                <constraint firstItem="Vae-XU-8Pp" firstAttribute="top" secondItem="zip-W7-iUf" secondAttribute="top" constant="3" id="GKq-GA-xbU">
+                                                    <variation key="widthClass=compact" constant="5"/>
+                                                </constraint>
+                                                <constraint firstAttribute="bottom" secondItem="Vae-XU-8Pp" secondAttribute="bottom" constant="-3" id="V1i-Oz-n87">
+                                                    <variation key="widthClass=compact" constant="5"/>
+                                                </constraint>
+                                                <constraint firstItem="Vae-XU-8Pp" firstAttribute="leading" secondItem="zip-W7-iUf" secondAttribute="leading" constant="3" id="XQl-o8-LzS">
+                                                    <variation key="widthClass=compact" constant="5"/>
+                                                </constraint>
+                                                <constraint firstAttribute="bottom" secondItem="MuT-Ea-oyh" secondAttribute="bottom" constant="5" id="apG-iG-6Fg"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Vae-XU-8Pp" secondAttribute="trailing" constant="200" id="mVK-RN-ab9"/>
+                                                <constraint firstAttribute="trailing" secondItem="MuT-Ea-oyh" secondAttribute="trailing" constant="5" id="zy7-8y-fs3"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="Vae-XU-8Pp"/>
+                                                    <exclude reference="MuT-Ea-oyh"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <exclude reference="GKq-GA-xbU"/>
+                                                    <exclude reference="V1i-Oz-n87"/>
+                                                    <exclude reference="XQl-o8-LzS"/>
+                                                    <exclude reference="mVK-RN-ab9"/>
+                                                    <exclude reference="3Du-00-fSs"/>
+                                                    <exclude reference="4r0-ZC-TEc"/>
+                                                    <exclude reference="apG-iG-6Fg"/>
+                                                    <exclude reference="zy7-8y-fs3"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="widthClass=compact">
+                                                <mask key="subviews">
+                                                    <include reference="Vae-XU-8Pp"/>
+                                                    <include reference="MuT-Ea-oyh"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <include reference="GKq-GA-xbU"/>
+                                                    <include reference="V1i-Oz-n87"/>
+                                                    <include reference="XQl-o8-LzS"/>
+                                                    <include reference="mVK-RN-ab9"/>
+                                                    <include reference="3Du-00-fSs"/>
+                                                    <include reference="4r0-ZC-TEc"/>
+                                                    <include reference="apG-iG-6Fg"/>
+                                                    <include reference="zy7-8y-fs3"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="coverImage" destination="Vae-XU-8Pp" id="BoJ-1i-M8C"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -66,14 +118,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="vYi-9u-jZb" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="4NU-vf-1t9"/>
-                            <constraint firstItem="DH8-0R-rIB" firstAttribute="top" secondItem="vYi-9u-jZb" secondAttribute="bottom" id="O1D-wK-yHW"/>
-                            <constraint firstItem="DH8-0R-rIB" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="Xfn-Ha-O8p"/>
+                            <constraint firstItem="DH8-0R-rIB" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="Bxx-kh-iNc"/>
+                            <constraint firstItem="DH8-0R-rIB" firstAttribute="trailing" secondItem="vYi-9u-jZb" secondAttribute="trailing" id="WMb-3F-fKX"/>
                             <constraint firstAttribute="trailing" secondItem="vYi-9u-jZb" secondAttribute="trailing" id="Z7P-L7-Nww"/>
-                            <constraint firstItem="DH8-0R-rIB" firstAttribute="trailing" secondItem="vYi-9u-jZb" secondAttribute="trailing" id="j0F-ds-mJ2"/>
+                            <constraint firstItem="DH8-0R-rIB" firstAttribute="top" secondItem="vYi-9u-jZb" secondAttribute="bottom" id="bbR-Wh-J8z"/>
+                            <constraint firstItem="DH8-0R-rIB" firstAttribute="leading" secondItem="vYi-9u-jZb" secondAttribute="leading" id="tAb-I8-uhD"/>
                             <constraint firstItem="vYi-9u-jZb" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="16" id="zbf-Ql-FRd">
                                 <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
-                            <constraint firstItem="DH8-0R-rIB" firstAttribute="leading" secondItem="vYi-9u-jZb" secondAttribute="leading" id="zgk-d1-eEI"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -84,10 +136,10 @@
                                 <exclude reference="4NU-vf-1t9"/>
                                 <exclude reference="Z7P-L7-Nww"/>
                                 <exclude reference="zbf-Ql-FRd"/>
-                                <exclude reference="O1D-wK-yHW"/>
-                                <exclude reference="Xfn-Ha-O8p"/>
-                                <exclude reference="j0F-ds-mJ2"/>
-                                <exclude reference="zgk-d1-eEI"/>
+                                <exclude reference="Bxx-kh-iNc"/>
+                                <exclude reference="WMb-3F-fKX"/>
+                                <exclude reference="bbR-Wh-J8z"/>
+                                <exclude reference="tAb-I8-uhD"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -99,10 +151,10 @@
                                 <include reference="4NU-vf-1t9"/>
                                 <include reference="Z7P-L7-Nww"/>
                                 <include reference="zbf-Ql-FRd"/>
-                                <include reference="O1D-wK-yHW"/>
-                                <include reference="Xfn-Ha-O8p"/>
-                                <include reference="j0F-ds-mJ2"/>
-                                <include reference="zgk-d1-eEI"/>
+                                <include reference="Bxx-kh-iNc"/>
+                                <include reference="WMb-3F-fKX"/>
+                                <include reference="bbR-Wh-J8z"/>
+                                <include reference="tAb-I8-uhD"/>
                             </mask>
                         </variation>
                     </view>
@@ -111,10 +163,9 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="SPa-yJ-hI6"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="allShows" destination="wRi-5w-vea" id="z6Z-Wc-Exm"/>
-                        <outlet property="hasEnded" destination="kXM-lz-da0" id="bLK-MB-2SQ"/>
+                        <outlet property="archivedBtn" destination="1gL-fa-mEw" id="7RK-1A-Hpc"/>
                         <outlet property="watchlist" destination="DH8-0R-rIB" id="Qhz-Oy-0w2"/>
-                        <outlet property="yetToStart" destination="1gL-fa-mEw" id="HFR-0j-pug"/>
+                        <outlet property="watchlistBtn" destination="kXM-lz-da0" id="3jY-xp-avh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

@@ -22,6 +22,7 @@
 		DE2B2DF51AF87D89009ADD55 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE2B2DF41AF87D89009ADD55 /* SystemConfiguration.framework */; };
 		DE2B2DF71AF87D95009ADD55 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DE2B2DF61AF87D95009ADD55 /* libz.dylib */; };
 		DE2B2DF91AF87DA5009ADD55 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DE2B2DF81AF87DA5009ADD55 /* libsqlite3.dylib */; };
+		DE2B2DFC1AF88AA1009ADD55 /* WatchlistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2B2DFB1AF88AA1009ADD55 /* WatchlistCell.swift */; };
 		DE5158081AF83647000404A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5158071AF83647000404A1 /* AppDelegate.swift */; };
 		DE51580A1AF83647000404A1 /* WatchlistVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5158091AF83647000404A1 /* WatchlistVC.swift */; };
 		DE51580D1AF83647000404A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE51580B1AF83647000404A1 /* Main.storyboard */; };
@@ -56,6 +57,8 @@
 		DE2B2DF41AF87D89009ADD55 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		DE2B2DF61AF87D95009ADD55 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		DE2B2DF81AF87DA5009ADD55 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		DE2B2DFA1AF8817B009ADD55 /* Monsoon.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Monsoon.entitlements; sourceTree = "<group>"; };
+		DE2B2DFB1AF88AA1009ADD55 /* WatchlistCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchlistCell.swift; sourceTree = "<group>"; };
 		DE5158021AF83647000404A1 /* Monsoon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Monsoon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE5158061AF83647000404A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE5158071AF83647000404A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -145,8 +148,10 @@
 		DE5158041AF83647000404A1 /* Monsoon */ = {
 			isa = PBXGroup;
 			children = (
+				DE2B2DFA1AF8817B009ADD55 /* Monsoon.entitlements */,
 				DE5158071AF83647000404A1 /* AppDelegate.swift */,
 				DE5158091AF83647000404A1 /* WatchlistVC.swift */,
+				DE2B2DFB1AF88AA1009ADD55 /* WatchlistCell.swift */,
 				DE51580B1AF83647000404A1 /* Main.storyboard */,
 				DE51580E1AF83647000404A1 /* Images.xcassets */,
 				DE5158101AF83647000404A1 /* LaunchScreen.xib */,
@@ -229,6 +234,12 @@
 				TargetAttributes = {
 					DE5158011AF83647000404A1 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 3R3T8L6XWF;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					DE5158161AF83647000404A1 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -281,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE51580A1AF83647000404A1 /* WatchlistVC.swift in Sources */,
+				DE2B2DFC1AF88AA1009ADD55 /* WatchlistCell.swift in Sources */,
 				DE5158081AF83647000404A1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -408,6 +420,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Monsoon/Monsoon.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -415,6 +430,7 @@
 				INFOPLIST_FILE = Monsoon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -422,6 +438,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Monsoon/Monsoon.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -429,6 +448,7 @@
 				INFOPLIST_FILE = Monsoon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

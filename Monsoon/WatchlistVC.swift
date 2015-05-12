@@ -97,6 +97,7 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         //var tvShow = self.showList[indexPath.row] as PFObject
         //cell.textLabel?.text = tvShow["name"] as? String
         
+        
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         cell.backgroundColor = UIColor(red: 0.9, green: 0.93, blue: 0.95, alpha: 1.0)
 

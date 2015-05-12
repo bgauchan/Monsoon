@@ -14,5 +14,7 @@ class WatchlistCell: UITableViewCell {
     @IBOutlet weak var coverImage: UIImageView!
     @IBOutlet weak var showName: UILabel!
     
+    @IBOutlet weak var startOrEndDate: UILabel!
+    @IBOutlet weak var timeLeft: UILabel!
     
 }

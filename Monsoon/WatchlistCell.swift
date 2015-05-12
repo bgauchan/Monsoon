@@ -11,10 +11,11 @@ import ParseUI
 
 class WatchlistCell: UITableViewCell {
 
-    @IBOutlet weak var coverImage: UIImageView!
+    @IBOutlet weak var coverImage: PFImageView!
     @IBOutlet weak var showName: UILabel!
     
     @IBOutlet weak var startOrEndDate: UILabel!
     @IBOutlet weak var timeLeft: UILabel!
     
+    @IBOutlet weak var days: UILabel!
 }

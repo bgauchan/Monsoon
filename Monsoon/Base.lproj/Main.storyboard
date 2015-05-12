@@ -24,10 +24,16 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="rQr-VS-dhD"/>
                                     <barButtonItem title="WATCHLIST" id="kXM-lz-da0">
                                         <color key="tintColor" red="0.69803921568627447" green="0.69803921568627447" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="showActiveShows:" destination="vXZ-lx-hvc" id="ioB-7r-bMR"/>
+                                        </connections>
                                     </barButtonItem>
                                     <barButtonItem width="40" style="plain" systemItem="fixedSpace" id="8oY-IR-ib1"/>
                                     <barButtonItem title="ARCHIVED" style="plain" id="1gL-fa-mEw">
                                         <color key="tintColor" red="0.69803921568627447" green="0.69803921568627447" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="showEndedShows:" destination="vXZ-lx-hvc" id="kdI-lO-Di3"/>
+                                        </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="UxD-Ef-oJP"/>
                                 </items>

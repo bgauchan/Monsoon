@@ -71,6 +71,8 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         
         if includeEndedShows == nil {
             query.whereKey("seasonEndDate", greaterThan: NSDate())
+        } else {
+            query.whereKey("seasonEndDate", lessThanOrEqualTo: NSDate())
         }
         
         query.orderByAscending("seasonEndDate")
@@ -210,6 +212,21 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         currentDate = dateFormatter.dateFromString(currentDateString)!
         
         return date.daysFrom(currentDate)
+    }
+    
+    @IBAction func showActiveShows(sender: AnyObject) {
+        
+        watchlistBtn.setTitleTextAttributes([ NSForegroundColorAttributeName: UIColor.orangeColor(), NSFontAttributeName: UIFont(name: "Futura", size: 16)!], forState: UIControlState.Normal)
+        archivedBtn.setTitleTextAttributes([ NSFontAttributeName: UIFont(name: "Futura", size: 16)!], forState: UIControlState.Normal)
+        
+        fetchShowsFromLocalStore()
+    }
+    
+    @IBAction func showEndedShows(sender: AnyObject) {
+        archivedBtn.setTitleTextAttributes([ NSForegroundColorAttributeName: UIColor.orangeColor(), NSFontAttributeName: UIFont(name: "Futura", size: 16)!], forState: UIControlState.Normal)
+        watchlistBtn.setTitleTextAttributes([ NSFontAttributeName: UIFont(name: "Futura", size: 16)!], forState: UIControlState.Normal)
+        
+        fetchShowsFromLocalStore(includeEndedShows: true)
     }
 }
 

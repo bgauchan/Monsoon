@@ -29,6 +29,8 @@
 		DE51580F1AF83647000404A1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE51580E1AF83647000404A1 /* Images.xcassets */; };
 		DE5158121AF83647000404A1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE5158101AF83647000404A1 /* LaunchScreen.xib */; };
 		DE51581E1AF83647000404A1 /* MonsoonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE51581D1AF83647000404A1 /* MonsoonTests.swift */; };
+		DE99858B1B032B7A0012FA6A /* AllShowsCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99858A1B032B7A0012FA6A /* AllShowsCVC.swift */; };
+		DE99858D1B032C840012FA6A /* TvShowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99858C1B032C840012FA6A /* TvShowCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		DE5158171AF83647000404A1 /* MonsoonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MonsoonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE51581C1AF83647000404A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE51581D1AF83647000404A1 /* MonsoonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsoonTests.swift; sourceTree = "<group>"; };
+		DE99858A1B032B7A0012FA6A /* AllShowsCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllShowsCVC.swift; sourceTree = "<group>"; };
+		DE99858C1B032C840012FA6A /* TvShowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TvShowCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +156,8 @@
 				DE5158071AF83647000404A1 /* AppDelegate.swift */,
 				DE5158091AF83647000404A1 /* WatchlistVC.swift */,
 				DE2B2DFB1AF88AA1009ADD55 /* WatchlistCell.swift */,
+				DE99858A1B032B7A0012FA6A /* AllShowsCVC.swift */,
+				DE99858C1B032C840012FA6A /* TvShowCell.swift */,
 				DE51580B1AF83647000404A1 /* Main.storyboard */,
 				DE51580E1AF83647000404A1 /* Images.xcassets */,
 				DE5158101AF83647000404A1 /* LaunchScreen.xib */,
@@ -292,6 +298,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE51580A1AF83647000404A1 /* WatchlistVC.swift in Sources */,
+				DE99858B1B032B7A0012FA6A /* AllShowsCVC.swift in Sources */,
+				DE99858D1B032C840012FA6A /* TvShowCell.swift in Sources */,
 				DE2B2DFC1AF88AA1009ADD55 /* WatchlistCell.swift in Sources */,
 				DE5158081AF83647000404A1 /* AppDelegate.swift in Sources */,
 			);

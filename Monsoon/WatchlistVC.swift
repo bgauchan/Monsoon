@@ -76,7 +76,7 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         }
         
         query.orderByAscending("seasonEndDate")
-        //query.fromLocalDatastore()
+        query.fromLocalDatastore()
         
         query.findObjectsInBackgroundWithBlock({(NSArray objects, NSError error) in
             if error != nil {

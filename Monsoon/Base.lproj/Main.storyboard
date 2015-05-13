@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14E11f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pAC-8E-TuI">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -183,10 +184,8 @@
                                                     <exclude reference="RUv-Kz-nZ9"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="3QB-BW-Ahx"/>
-                                                    <exclude reference="CiI-GF-so4"/>
-                                                    <exclude reference="o5T-bX-b9f"/>
-                                                    <exclude reference="ojT-94-ELl"/>
+                                                    <exclude reference="a5a-fO-fxY"/>
+                                                    <exclude reference="cNz-BX-wzr"/>
                                                     <exclude reference="3Du-00-fSs"/>
                                                     <exclude reference="Dx3-pJ-k9O"/>
                                                     <exclude reference="UMK-FM-DRn"/>
@@ -195,10 +194,12 @@
                                                     <exclude reference="hei-NG-Mf7"/>
                                                     <exclude reference="w7u-dX-Ieg"/>
                                                     <exclude reference="zy7-8y-fs3"/>
-                                                    <exclude reference="cNz-BX-wzr"/>
-                                                    <exclude reference="a5a-fO-fxY"/>
                                                     <exclude reference="2zS-xX-0Vs"/>
                                                     <exclude reference="JSb-6N-DFF"/>
+                                                    <exclude reference="3QB-BW-Ahx"/>
+                                                    <exclude reference="CiI-GF-so4"/>
+                                                    <exclude reference="o5T-bX-b9f"/>
+                                                    <exclude reference="ojT-94-ELl"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -211,10 +212,8 @@
                                                     <include reference="RUv-Kz-nZ9"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="3QB-BW-Ahx"/>
-                                                    <exclude reference="CiI-GF-so4"/>
-                                                    <include reference="o5T-bX-b9f"/>
-                                                    <include reference="ojT-94-ELl"/>
+                                                    <include reference="a5a-fO-fxY"/>
+                                                    <include reference="cNz-BX-wzr"/>
                                                     <include reference="3Du-00-fSs"/>
                                                     <include reference="Dx3-pJ-k9O"/>
                                                     <include reference="UMK-FM-DRn"/>
@@ -223,10 +222,12 @@
                                                     <include reference="hei-NG-Mf7"/>
                                                     <include reference="w7u-dX-Ieg"/>
                                                     <include reference="zy7-8y-fs3"/>
-                                                    <include reference="cNz-BX-wzr"/>
-                                                    <include reference="a5a-fO-fxY"/>
                                                     <include reference="2zS-xX-0Vs"/>
                                                     <include reference="JSb-6N-DFF"/>
+                                                    <include reference="3QB-BW-Ahx"/>
+                                                    <exclude reference="CiI-GF-so4"/>
+                                                    <include reference="o5T-bX-b9f"/>
+                                                    <include reference="ojT-94-ELl"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -290,7 +291,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Monsoon" id="r7f-kJ-IAm">
                         <barButtonItem key="leftBarButtonItem" systemItem="trash" id="l4v-Q9-avP"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="SPa-yJ-hI6"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="SPa-yJ-hI6">
+                            <connections>
+                                <segue destination="7aF-6Q-mGr" kind="showDetail" id="yci-uf-cLy"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="archivedBtn" destination="1gL-fa-mEw" id="7RK-1A-Hpc"/>
@@ -301,6 +306,90 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1377" y="389"/>
+        </scene>
+        <!--TV Shows-->
+        <scene sceneID="X5T-IE-KG6">
+            <objects>
+                <collectionViewController id="Dlu-2s-Eyz" customClass="AllShowsCVC" customModule="Monsoon" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="4c8-H7-2eG">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="RAo-0a-8tA">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="tvShowCell" id="EDJ-QZ-Dtm" customClass="TvShowCell" customModule="Monsoon" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="150"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a6o-z9-Alq" customClass="PFImageView">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="a6o-z9-Alq" firstAttribute="top" secondItem="EDJ-QZ-Dtm" secondAttribute="top" id="MzO-o3-2hp"/>
+                                    <constraint firstAttribute="bottom" secondItem="a6o-z9-Alq" secondAttribute="bottom" id="Qx1-Fh-wbe"/>
+                                    <constraint firstAttribute="trailing" secondItem="a6o-z9-Alq" secondAttribute="trailing" id="YNB-xR-s0L"/>
+                                    <constraint firstItem="a6o-z9-Alq" firstAttribute="leading" secondItem="EDJ-QZ-Dtm" secondAttribute="leading" id="tuA-uw-mKt"/>
+                                </constraints>
+                                <size key="customSize" width="100" height="150"/>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="a6o-z9-Alq"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="MzO-o3-2hp"/>
+                                        <exclude reference="Qx1-Fh-wbe"/>
+                                        <exclude reference="YNB-xR-s0L"/>
+                                        <exclude reference="tuA-uw-mKt"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="a6o-z9-Alq"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="MzO-o3-2hp"/>
+                                        <include reference="Qx1-Fh-wbe"/>
+                                        <include reference="YNB-xR-s0L"/>
+                                        <include reference="tuA-uw-mKt"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outlet property="coverImageView" destination="a6o-z9-Alq" id="68D-tY-JJ7"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="Dlu-2s-Eyz" id="V5b-li-ffz"/>
+                            <outlet property="delegate" destination="Dlu-2s-Eyz" id="J4g-ze-hrI"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="TV Shows" id="s4H-AJ-XKi">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="AeS-8D-opK">
+                            <connections>
+                                <action selector="closeModal:" destination="Dlu-2s-Eyz" id="k9x-er-BIH"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="qBJ-HT-OCg">
+                            <connections>
+                                <action selector="showSearchBar:" destination="Dlu-2s-Eyz" id="ec7-gP-IHJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yil-Xn-F9l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3048" y="389"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uPh-9F-JS0">
@@ -319,6 +408,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fU4-Lj-dpT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="540" y="389"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DcC-YB-uU2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7aF-6Q-mGr" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="z4T-rq-9Nt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Dlu-2s-Eyz" kind="relationship" relationship="rootViewController" id="tPz-DO-BWu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bq0-BF-Dhl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2274" y="389"/>
         </scene>
     </scenes>
 </document>

@@ -57,6 +57,21 @@ class AllShowsCVC: UICollectionViewController {
         return cell
     }
     
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let tvShow = self.showList[indexPath.row] as PFObject
+        
+        var query: PFQuery = PFQuery(className: "TvShow")
+        
+        tvShow.pinInBackgroundWithName("watchlist", block: { (success: Bool, error: NSError?) -> Void in
+            if success {
+                println("Pinning was successful")
+                self.dismissViewControllerAnimated(true, completion: nil)
+            } else {
+                print("\nPinning wasn't successful!")
+            }
+        })
+    }
+    
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         
         var width = self.view.frame.size.width/3.0

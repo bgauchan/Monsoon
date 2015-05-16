@@ -28,7 +28,6 @@ class AllShowsCVC: UICollectionViewController {
             if error != nil {
                 print(error)
             } else {
-                println("shows count is \(objects?.count)")
                 self.showList = objects as! [PFObject]
                 self.collectionView?.reloadData()
             }

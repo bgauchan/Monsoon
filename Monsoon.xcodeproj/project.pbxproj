@@ -31,6 +31,7 @@
 		DE5221E11B05E51D003A7BC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE5221DF1B05E51D003A7BC6 /* Main.storyboard */; };
 		DE99858B1B032B7A0012FA6A /* AllShowsCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99858A1B032B7A0012FA6A /* AllShowsCVC.swift */; };
 		DE99858D1B032C840012FA6A /* TvShowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99858C1B032C840012FA6A /* TvShowCell.swift */; };
+		DEBFE78C1B076DAE00B74EAC /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBFE78B1B076DAE00B74EAC /* Helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		DE5221E01B05E51D003A7BC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Monsoon/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DE99858A1B032B7A0012FA6A /* AllShowsCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllShowsCVC.swift; sourceTree = "<group>"; };
 		DE99858C1B032C840012FA6A /* TvShowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TvShowCell.swift; sourceTree = "<group>"; };
+		DEBFE78B1B076DAE00B74EAC /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 				DE5158091AF83647000404A1 /* WatchlistVC.swift */,
 				DE2B2DFB1AF88AA1009ADD55 /* WatchlistCell.swift */,
 				DE99858A1B032B7A0012FA6A /* AllShowsCVC.swift */,
+				DEBFE78B1B076DAE00B74EAC /* Helper.swift */,
 				DE5221DF1B05E51D003A7BC6 /* Main.storyboard */,
 				DE99858C1B032C840012FA6A /* TvShowCell.swift */,
 				DE51580E1AF83647000404A1 /* Images.xcassets */,
@@ -299,6 +302,7 @@
 			files = (
 				DE51580A1AF83647000404A1 /* WatchlistVC.swift in Sources */,
 				DE99858B1B032B7A0012FA6A /* AllShowsCVC.swift in Sources */,
+				DEBFE78C1B076DAE00B74EAC /* Helper.swift in Sources */,
 				DE99858D1B032C840012FA6A /* TvShowCell.swift in Sources */,
 				DE2B2DFC1AF88AA1009ADD55 /* WatchlistCell.swift in Sources */,
 				DE5158081AF83647000404A1 /* AppDelegate.swift in Sources */,

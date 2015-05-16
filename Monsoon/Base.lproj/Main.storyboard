@@ -59,8 +59,7 @@
                                                             <exclude reference="oxn-Be-KNb"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="5" y="3" width="107" height="100"/>
+                                                    <variation key="widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="oxn-Be-KNb"/>
                                                         </mask>
@@ -80,8 +79,7 @@
                                                             <exclude reference="oWK-eu-eJ4"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="112" y="3" width="204" height="100"/>
+                                                    <variation key="widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="oWK-eu-eJ4"/>
                                                         </mask>
@@ -100,8 +98,7 @@
                                                             <exclude reference="MgM-vR-svf"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="122" y="8" width="130" height="52"/>
+                                                    <variation key="widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="MgM-vR-svf"/>
                                                         </mask>
@@ -120,8 +117,7 @@
                                                             <exclude reference="lch-ZI-bQS"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="122" y="63" width="110" height="30"/>
+                                                    <variation key="widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="lch-ZI-bQS"/>
                                                         </mask>
@@ -132,18 +128,12 @@
                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
                                                     <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="252" y="23" width="54" height="39"/>
-                                                    </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="days" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUv-Kz-nZ9">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
                                                     <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="269" y="56" width="35" height="21"/>
-                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <constraints>
@@ -315,7 +305,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="archivedBtn" destination="1gL-fa-mEw" id="7RK-1A-Hpc"/>
-                        <outlet property="watchlist" destination="DH8-0R-rIB" id="Qhz-Oy-0w2"/>
+                        <outlet property="tableview" destination="DH8-0R-rIB" id="U8t-aL-umT"/>
                         <outlet property="watchlistBtn" destination="kXM-lz-da0" id="3jY-xp-avh"/>
                     </connections>
                 </viewController>

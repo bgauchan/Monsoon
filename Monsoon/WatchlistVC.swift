@@ -15,24 +15,26 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     @IBOutlet weak var watchlistBtn: UIBarButtonItem!
     @IBOutlet weak var archivedBtn: UIBarButtonItem!
     
-    @IBOutlet weak var watchlist: UITableView!
+    @IBOutlet weak var tableview: UITableView!
     
     var showList = [PFObject]()
-    //var tvShowController = TvShowController()
     
     let defaults = NSUserDefaults(suiteName: "group.com.bardan.monsoon")
+    let helper = Helper()
     var shouldFetchFromServer = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.watchlist.separatorColor = UIColor.clearColor()
-        self.watchlist.backgroundColor = UIColor(red: 0.93, green: 0.94, blue: 0.95, alpha: 1.0)
+        self.tableview.separatorColor = UIColor.clearColor()
+        self.tableview.backgroundColor = UIColor(red: 0.93, green: 0.94, blue: 0.95, alpha: 1.0)
         
         // Toolbar buttons
         
         watchlistBtn.setTitleTextAttributes([ NSForegroundColorAttributeName: UIColor.orangeColor(), NSFontAttributeName: UIFont(name: "Futura", size: 16)!], forState: UIControlState.Normal)
         archivedBtn.setTitleTextAttributes([ NSFontAttributeName: UIFont(name: "Futura", size: 16)!], forState: UIControlState.Normal)
+        
+        println("Notifications scheduled => \(UIApplication.sharedApplication().scheduledLocalNotifications.count)")
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -43,7 +45,7 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         
         if let lastFetchedDate = defaults.objectForKey("lastFetchedDate") as? NSDate {
             
-            println("Time since last fetched => \(currentDate.timeIntervalSinceDate(lastFetchedDate))")
+            //println("Time since last fetched => \(currentDate.timeIntervalSinceDate(lastFetchedDate))")
             
             // only fetch from the server if it's been more than 30 minutes
             if currentDate.timeIntervalSinceDate(lastFetchedDate) > 1800 {
@@ -84,7 +86,7 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
             } else {
                 self.showList = objects as! [PFObject]
                 self.sortShowsByTimeLeft()
-                self.watchlist.reloadData()
+                self.tableview.reloadData()
             }
         })
     }
@@ -95,8 +97,8 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         self.showList.sort {
             tvShow1, tvShow2 in
             
-            var (startOrEnd1: String, time1: Int) = self.getDateLabel(tvShow1)
-            var (startOrEnd2: String, time2: Int) = self.getDateLabel(tvShow2)
+            var (startOrEnd1: String, time1: Int) = self.helper.getDateStringAndTimeLeft(tvShow1)
+            var (startOrEnd2: String, time2: Int) = self.helper.getDateStringAndTimeLeft(tvShow2)
             
             return time1 < time2
         }
@@ -117,7 +119,7 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         
         var tvShow = self.showList[indexPath.row] as PFObject
         
-        var (startOrEnd: String, timeLeft: Int) = getDateLabel(tvShow)
+        var (startOrEnd: String, timeLeft: Int) = helper.getDateStringAndTimeLeft(tvShow)
         cell.startOrEndDate.text = startOrEnd
         
         if timeLeft < 10 {
@@ -125,6 +127,8 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         } else {            
             cell.timeLeft.text = "\(timeLeft)"
         }
+        
+        // different colors for days left labels depending on if the show is starting or ending
         
         if startOrEnd.rangeOfString("starts") != nil {
             cell.timeLeft.textColor = UIColor.cyanColor()
@@ -152,11 +156,6 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == UITableViewCellEditingStyle.Delete {
-            println("delete")
-//            numbers.removeAtIndex(indexPath.row)
-//            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
-        }
     }
     
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
@@ -180,69 +179,6 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    func getDateLabel(show: PFObject) -> (dateString: String, timeLeft: Int) {
-        
-        let currentSeason = show["currentSeason"] as! Int
-        let seasonStartDate = show["seasonStartDate"] as! NSDate
-        let seasonEndDate: NSDate? = show["seasonEndDate"] as! NSDate?
-        
-        let (dateString, timeLeft) = getDateStringAndTimeLeft(currentSeason, seasonStartDate: seasonStartDate, seasonEndDate: seasonEndDate!)
-        
-        return (dateString, timeLeft)
-    }
-    
-    func getDateStringAndTimeLeft(currentSeason: Int, seasonStartDate: NSDate, seasonEndDate: NSDate)  -> (dateString: String, timeLeft: Int) {
-        
-        var dateString = ""
-        var timeLeft = 0
-        let currentDate = NSDate()
-        
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateStyle = .MediumStyle
-        dateFormatter.timeZone = NSTimeZone(name: "GMT")
-        
-        var dateComparisionResult:NSComparisonResult = currentDate.compare(seasonStartDate as NSDate)
-        
-        if dateComparisionResult == NSComparisonResult.OrderedAscending
-        {
-            // Season hasn't started yet
-            dateString = "Season \(currentSeason) starts in \(dateFormatter.stringFromDate(seasonStartDate))"
-            timeLeft = dateDifferenceInString(seasonStartDate)
-        }
-        else if dateComparisionResult == NSComparisonResult.OrderedDescending
-        {
-            // the season has already started, now we check the end date
-            dateComparisionResult = currentDate.compare(seasonEndDate)
-            
-            if dateComparisionResult == NSComparisonResult.OrderedDescending{
-                dateString = "Season \(currentSeason) ended on \(dateFormatter.stringFromDate(seasonEndDate))"
-            } else {
-                dateString = "Season \(currentSeason) ends in \(dateFormatter.stringFromDate(seasonEndDate))"
-                timeLeft = dateDifferenceInString(seasonEndDate)
-            }
-        }
-        else if dateComparisionResult == NSComparisonResult.OrderedSame
-        {
-            dateString = "Season \(currentSeason) starts today"
-        }
-        
-        return (dateString, timeLeft)
-    }
-    
-    func dateDifferenceInString(date: NSDate) -> Int {
-        
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateStyle = .MediumStyle
-        dateFormatter.timeZone = NSTimeZone()
-        
-        var currentDate = NSDate()
-        let currentDateString = dateFormatter.stringFromDate(currentDate)
-        currentDate = dateFormatter.dateFromString(currentDateString)!
-        
-        return date.daysFrom(currentDate)
     }
     
     @IBAction func showActiveShows(sender: AnyObject) {
@@ -261,30 +197,7 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     }
     
     @IBAction func showSettingsView(sender: AnyObject) {
-    }
-}
 
-extension NSDate {
-    func yearsFrom(date:NSDate) -> Int{
-        return NSCalendar.currentCalendar().components(NSCalendarUnit.CalendarUnitYear, fromDate: date, toDate: self, options: nil).year
-    }
-    func monthsFrom(date:NSDate) -> Int{
-        return NSCalendar.currentCalendar().components(NSCalendarUnit.CalendarUnitMonth, fromDate: date, toDate: self, options: nil).month
-    }
-    func weeksFrom(date:NSDate) -> Int{
-        return NSCalendar.currentCalendar().components(NSCalendarUnit.CalendarUnitWeekOfYear, fromDate: date, toDate: self, options: nil).weekOfYear
-    }
-    func daysFrom(date:NSDate) -> Int{
-        return NSCalendar.currentCalendar().components(NSCalendarUnit.CalendarUnitDay, fromDate: date, toDate: self, options: nil).day
-    }
-    func hoursFrom(date:NSDate) -> Int{
-        return NSCalendar.currentCalendar().components(NSCalendarUnit.CalendarUnitHour, fromDate: date, toDate: self, options: nil).hour
-    }
-    func minutesFrom(date:NSDate) -> Int{
-        return NSCalendar.currentCalendar().components(NSCalendarUnit.CalendarUnitMinute, fromDate: date, toDate: self, options: nil).minute
-    }
-    func secondsFrom(date:NSDate) -> Int{
-        return NSCalendar.currentCalendar().components(NSCalendarUnit.CalendarUnitSecond, fromDate: date, toDate: self, options: nil).second
     }
 }
 

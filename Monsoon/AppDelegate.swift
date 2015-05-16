@@ -64,6 +64,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
+        
+        var alert = UIAlertController(title: "Notification", message: notification.alertBody, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+        
+        let navigationController = application.windows[0].rootViewController as! UINavigationController
+        let activeViewCont = navigationController.visibleViewController
+        
+        activeViewCont.presentViewController(alert, animated: true, completion: nil)
+    }
 }
 

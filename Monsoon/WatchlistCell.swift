@@ -8,7 +8,6 @@
 
 import UIKit
 import ParseUI
-
 class WatchlistCell: UITableViewCell {
 
     @IBOutlet weak var coverImage: PFImageView!

@@ -105,7 +105,7 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     // MARK: - Table view data source
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 105
+        return 103
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -119,7 +119,12 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         
         var (startOrEnd: String, timeLeft: Int) = getDateLabel(tvShow)
         cell.startOrEndDate.text = startOrEnd
-        cell.timeLeft.text = "\(timeLeft)"
+        
+        if timeLeft < 10 {
+            cell.timeLeft.text = "0\(timeLeft)"
+        } else {            
+            cell.timeLeft.text = "\(timeLeft)"
+        }
         
         if startOrEnd.rangeOfString("starts") != nil {
             cell.timeLeft.textColor = UIColor.cyanColor()
@@ -140,11 +145,37 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
             })
         }
         
-        
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         cell.backgroundColor = UIColor(red: 0.9, green: 0.93, blue: 0.95, alpha: 1.0)
-
+        
         return cell
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            println("delete")
+//            numbers.removeAtIndex(indexPath.row)
+//            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+        }
+    }
+    
+    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
+        
+        var deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Burn" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
+            
+            var tvShow = self.showList[indexPath.row] as PFObject
+            tvShow.unpinInBackgroundWithName("watchlist", block: { (success: Bool, error: NSError?) -> Void in
+                if success {
+                    self.showList.removeAtIndex(indexPath.row)
+                    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+                }
+            })
+            
+        })
+        
+        deleteAction.backgroundColor = UIColor(red: 0.9, green: 0.93, blue: 0.95, alpha: 1.0)
+        
+        return [deleteAction]
     }
 
     override func didReceiveMemoryWarning() {
@@ -227,6 +258,9 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         watchlistBtn.setTitleTextAttributes([ NSFontAttributeName: UIFont(name: "Futura", size: 16)!], forState: UIControlState.Normal)
         
         fetchShowsFromLocalStore(includeEndedShows: true)
+    }
+    
+    @IBAction func showSettingsView(sender: AnyObject) {
     }
 }
 

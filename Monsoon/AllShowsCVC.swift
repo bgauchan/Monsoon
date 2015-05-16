@@ -18,13 +18,17 @@ class AllShowsCVC: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //self.collectionView?.backgroundColor = UIColor(red: 0.93, green: 0.94, blue: 0.95, alpha: 1.0)
+        
         var query: PFQuery = PFQuery(className: "TvShow")
-        query.orderByAscending("name")
+        query.whereKeyExists("coverImage")
+        query.orderByDescending("updatedAt")
         
         query.findObjectsInBackgroundWithBlock({(NSArray objects, NSError error) in
             if error != nil {
                 print(error)
             } else {
+                println("shows count is \(objects?.count)")
                 self.showList = objects as! [PFObject]
                 self.collectionView?.reloadData()
             }

@@ -14,6 +14,7 @@ let reuseIdentifier = "tvShowCell"
 class AllShowsCVC: UICollectionViewController {
     
     var showList = [PFObject]()
+    let helper = Helper()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,6 +69,10 @@ class AllShowsCVC: UICollectionViewController {
         tvShow.pinInBackgroundWithName("watchlist", block: { (success: Bool, error: NSError?) -> Void in
             if success {
                 println("Pinning was successful")
+                
+                // set up a notification for the tv show
+                self.helper.scheduleNotification(tvShow)
+                
                 self.dismissViewControllerAnimated(true, completion: nil)
             } else {
                 print("\nPinning wasn't successful!")

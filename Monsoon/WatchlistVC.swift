@@ -34,7 +34,7 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         watchlistBtn.setTitleTextAttributes([ NSForegroundColorAttributeName: UIColor.orangeColor(), NSFontAttributeName: UIFont(name: "Futura", size: 16)!], forState: UIControlState.Normal)
         archivedBtn.setTitleTextAttributes([ NSFontAttributeName: UIFont(name: "Futura", size: 16)!], forState: UIControlState.Normal)
         
-        println("Notifications scheduled => \(UIApplication.sharedApplication().scheduledLocalNotifications.count)")
+        helper.checkIfNotificationExists()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -163,10 +163,14 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         var deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Burn" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
             
             var tvShow = self.showList[indexPath.row] as PFObject
+            
+            // unpin the show
             tvShow.unpinInBackgroundWithName("watchlist", block: { (success: Bool, error: NSError?) -> Void in
                 if success {
-                    self.showList.removeAtIndex(indexPath.row)
-                    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+                    self.showList.removeAtIndex(indexPath.row) // remove the array
+                    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic) // delete the table row
+                    
+                    self.helper.removeNotification(tvShow["seriesID"] as! Int) // remove the notification associated with the show
                 }
             })
             
@@ -197,7 +201,7 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     }
     
     @IBAction func showSettingsView(sender: AnyObject) {
-
+        UIApplication.sharedApplication().cancelAllLocalNotifications()
     }
 }
 

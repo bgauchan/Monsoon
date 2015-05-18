@@ -116,7 +116,8 @@ class Helper {
             if dateComparisionResult == NSComparisonResult.OrderedAscending {
                 alertText += "Season \(currentSeason) of \(showName) ends tomorrow!"
                 notificationDate = seasonEndDate.dateByAddingTimeInterval(-86400)
-                
+            } else {
+                println("Tv Show already ended so no notification was added")
             }
         }
         

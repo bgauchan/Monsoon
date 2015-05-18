@@ -23,14 +23,14 @@
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="rQr-VS-dhD"/>
-                                    <barButtonItem title="WATCHLIST" id="kXM-lz-da0">
+                                    <barButtonItem image="peak-season-icon" id="kXM-lz-da0">
                                         <color key="tintColor" red="0.69803921568627447" green="0.69803921568627447" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="showActiveShows:" destination="vXZ-lx-hvc" id="ioB-7r-bMR"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem width="40" style="plain" systemItem="fixedSpace" id="8oY-IR-ib1"/>
-                                    <barButtonItem title="ARCHIVED" style="plain" id="1gL-fa-mEw">
+                                    <barButtonItem image="off-season-icon" style="plain" id="1gL-fa-mEw">
                                         <color key="tintColor" red="0.69803921568627447" green="0.69803921568627447" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="showEndedShows:" destination="vXZ-lx-hvc" id="kdI-lO-Di3"/>
@@ -43,7 +43,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="watchlistCell" rowHeight="103" id="eJN-Cv-hl5" customClass="WatchlistCell" customModule="Monsoon" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="watchlistCell" rowHeight="105" id="eJN-Cv-hl5" customClass="WatchlistCell" customModule="Monsoon" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eJN-Cv-hl5" id="zip-W7-iUf">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -141,7 +141,7 @@
                                                     <variation key="widthClass=compact" constant="-12"/>
                                                 </constraint>
                                                 <constraint firstItem="MuT-Ea-oyh" firstAttribute="top" secondItem="zip-W7-iUf" secondAttribute="top" constant="5" id="3Du-00-fSs">
-                                                    <variation key="widthClass=compact" constant="3"/>
+                                                    <variation key="widthClass=compact" constant="5"/>
                                                 </constraint>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Vae-XU-8Pp" secondAttribute="trailing" constant="200" id="3QB-BW-Ahx"/>
                                                 <constraint firstItem="Vae-XU-8Pp" firstAttribute="bottom" secondItem="zip-W7-iUf" secondAttribute="bottomMargin" id="CiI-GF-so4"/>
@@ -169,7 +169,7 @@
                                                     <variation key="widthClass=compact" constant="5"/>
                                                 </constraint>
                                                 <constraint firstItem="Vae-XU-8Pp" firstAttribute="top" secondItem="zip-W7-iUf" secondAttribute="top" constant="80" id="ojT-94-ELl">
-                                                    <variation key="widthClass=compact" constant="3"/>
+                                                    <variation key="widthClass=compact" constant="5"/>
                                                 </constraint>
                                                 <constraint firstItem="MuT-Ea-oyh" firstAttribute="top" secondItem="Hnc-7n-DKP" secondAttribute="top" constant="-62" id="w7u-dX-Ieg">
                                                     <variation key="widthClass=compact" constant="-5"/>
@@ -292,12 +292,12 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Monsoon" id="r7f-kJ-IAm">
-                        <barButtonItem key="leftBarButtonItem" title="Settings" id="l4v-Q9-avP">
+                        <barButtonItem key="leftBarButtonItem" image="settings-icon" id="l4v-Q9-avP">
                             <connections>
                                 <action selector="showSettingsView:" destination="vXZ-lx-hvc" id="jJs-V8-Uo7"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="SPa-yJ-hI6">
+                        <barButtonItem key="rightBarButtonItem" image="add-show-icon" id="SPa-yJ-hI6">
                             <connections>
                                 <segue destination="7aF-6Q-mGr" kind="showDetail" id="yci-uf-cLy"/>
                             </connections>
@@ -435,4 +435,10 @@
             <point key="canvasLocation" x="2274" y="389"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="add-show-icon" width="16" height="16"/>
+        <image name="off-season-icon" width="115" height="16"/>
+        <image name="peak-season-icon" width="123" height="16"/>
+        <image name="settings-icon" width="18" height="18"/>
+    </resources>
 </document>

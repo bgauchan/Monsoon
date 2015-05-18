@@ -31,8 +31,10 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         
         // Toolbar buttons
         
-        watchlistBtn.setTitleTextAttributes([ NSForegroundColorAttributeName: UIColor.orangeColor(), NSFontAttributeName: UIFont(name: "Futura", size: 16)!], forState: UIControlState.Normal)
-        archivedBtn.setTitleTextAttributes([ NSFontAttributeName: UIFont(name: "Futura", size: 16)!], forState: UIControlState.Normal)
+        watchlistBtn.tintColor = UIColor.orangeColor()
+        
+        //watchlistBtn.setTitleTextAttributes([ NSForegroundColorAttributeName: UIColor.orangeColor(), NSFontAttributeName: UIFont(name: "Futura", size: 16)!], forState: UIControlState.Normal)
+        //archivedBtn.setTitleTextAttributes([ NSFontAttributeName: UIFont(name: "Futura", size: 16)!], forState: UIControlState.Normal)
         
         helper.checkIfNotificationExists()
     }
@@ -107,7 +109,7 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     // MARK: - Table view data source
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 103
+        return 105
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -187,15 +189,22 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     
     @IBAction func showActiveShows(sender: AnyObject) {
         
-        watchlistBtn.setTitleTextAttributes([ NSForegroundColorAttributeName: UIColor.orangeColor(), NSFontAttributeName: UIFont(name: "Futura", size: 16)!], forState: UIControlState.Normal)
-        archivedBtn.setTitleTextAttributes([ NSFontAttributeName: UIFont(name: "Futura", size: 16)!], forState: UIControlState.Normal)
+        watchlistBtn.tintColor = UIColor.orangeColor()
+        archivedBtn.tintColor = UIColor.lightGrayColor()
+        
+        //watchlistBtn.setTitleTextAttributes([ NSForegroundColorAttributeName: UIColor.orangeColor(), NSFontAttributeName: UIFont(name: "Futura", size: 16)!], forState: UIControlState.Normal)
+        //archivedBtn.setTitleTextAttributes([ NSFontAttributeName: UIFont(name: "Futura", size: 16)!], forState: UIControlState.Normal)
         
         fetchShowsFromLocalStore()
     }
     
     @IBAction func showEndedShows(sender: AnyObject) {
-        archivedBtn.setTitleTextAttributes([ NSForegroundColorAttributeName: UIColor.orangeColor(), NSFontAttributeName: UIFont(name: "Futura", size: 16)!], forState: UIControlState.Normal)
-        watchlistBtn.setTitleTextAttributes([ NSFontAttributeName: UIFont(name: "Futura", size: 16)!], forState: UIControlState.Normal)
+        
+        archivedBtn.tintColor = UIColor.orangeColor()
+        watchlistBtn.tintColor = UIColor.lightGrayColor()
+        
+        //archivedBtn.setTitleTextAttributes([ NSForegroundColorAttributeName: UIColor.orangeColor(), NSFontAttributeName: UIFont(name: "Futura", size: 16)!], forState: UIControlState.Normal)
+        //watchlistBtn.setTitleTextAttributes([ NSFontAttributeName: UIFont(name: "Futura", size: 16)!], forState: UIControlState.Normal)
         
         fetchShowsFromLocalStore(includeEndedShows: true)
     }

@@ -80,6 +80,17 @@ class AllShowsCVC: UICollectionViewController {
         })
     }
     
+    override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String,atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+        
+        if kind == UICollectionElementKindSectionHeader {
+            let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader,
+                withReuseIdentifier:"searchCell", forIndexPath: indexPath) as! UICollectionReusableView
+            return headerView
+        } else {
+            return UICollectionReusableView()
+        }
+    }
+    
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         
         var width = self.view.frame.size.width/3.0

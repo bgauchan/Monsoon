@@ -29,7 +29,7 @@
                                             <action selector="showActiveShows:" destination="vXZ-lx-hvc" id="ioB-7r-bMR"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem width="40" style="plain" systemItem="fixedSpace" id="8oY-IR-ib1"/>
+                                    <barButtonItem width="15" style="plain" systemItem="fixedSpace" id="8oY-IR-ib1"/>
                                     <barButtonItem image="off-season-icon" style="plain" id="1gL-fa-mEw">
                                         <color key="tintColor" red="0.69803921568627447" green="0.69803921568627447" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
@@ -43,7 +43,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="watchlistCell" rowHeight="105" id="eJN-Cv-hl5" customClass="WatchlistCell" customModule="Monsoon" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="watchlistCell" rowHeight="103" id="eJN-Cv-hl5" customClass="WatchlistCell" customModule="Monsoon" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eJN-Cv-hl5" id="zip-W7-iUf">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -67,7 +67,7 @@
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MuT-Ea-oyh">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                                    <color key="backgroundColor" red="0.0078431372550000003" green="0.0078431372550000003" blue="0.23239617600000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" red="0.0078431372549019607" green="0.0078431372549019607" blue="0.16078431372549021" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="100" id="oWK-eu-eJ4"/>
                                                     </constraints>
@@ -141,7 +141,7 @@
                                                     <variation key="widthClass=compact" constant="-12"/>
                                                 </constraint>
                                                 <constraint firstItem="MuT-Ea-oyh" firstAttribute="top" secondItem="zip-W7-iUf" secondAttribute="top" constant="5" id="3Du-00-fSs">
-                                                    <variation key="widthClass=compact" constant="5"/>
+                                                    <variation key="widthClass=compact" constant="3"/>
                                                 </constraint>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Vae-XU-8Pp" secondAttribute="trailing" constant="200" id="3QB-BW-Ahx"/>
                                                 <constraint firstItem="Vae-XU-8Pp" firstAttribute="bottom" secondItem="zip-W7-iUf" secondAttribute="bottomMargin" id="CiI-GF-so4"/>
@@ -169,7 +169,7 @@
                                                     <variation key="widthClass=compact" constant="5"/>
                                                 </constraint>
                                                 <constraint firstItem="Vae-XU-8Pp" firstAttribute="top" secondItem="zip-W7-iUf" secondAttribute="top" constant="80" id="ojT-94-ELl">
-                                                    <variation key="widthClass=compact" constant="5"/>
+                                                    <variation key="widthClass=compact" constant="3"/>
                                                 </constraint>
                                                 <constraint firstItem="MuT-Ea-oyh" firstAttribute="top" secondItem="Hnc-7n-DKP" secondAttribute="top" constant="-62" id="w7u-dX-Ieg">
                                                     <variation key="widthClass=compact" constant="-5"/>
@@ -320,9 +320,10 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="4c8-H7-2eG">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0078431372549019607" green="0.0078431372549019607" blue="0.16078431372549021" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="RAo-0a-8tA">
                             <size key="itemSize" width="50" height="50"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="headerReferenceSize" width="50" height="50"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
@@ -376,6 +377,45 @@
                                 </connections>
                             </collectionViewCell>
                         </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="searchCell" id="djD-hP-wXc">
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <searchBar contentMode="redraw" placeholder="Search for a TV Show" translatesAutoresizingMaskIntoConstraints="NO" id="cN8-9i-dzy">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <color key="backgroundColor" red="0.0078431372549019607" green="0.0078431372549019607" blue="0.16078431372549021" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="barTintColor" red="0.0078431372549019607" green="0.0078431372549019607" blue="0.16078431372549021" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="cN8-9i-dzy" secondAttribute="trailing" id="BFG-DS-gwl"/>
+                                <constraint firstItem="cN8-9i-dzy" firstAttribute="leading" secondItem="djD-hP-wXc" secondAttribute="leading" id="JvC-fA-o3W"/>
+                                <constraint firstAttribute="bottom" secondItem="cN8-9i-dzy" secondAttribute="bottom" id="Nfo-xo-LP7"/>
+                                <constraint firstItem="cN8-9i-dzy" firstAttribute="top" secondItem="djD-hP-wXc" secondAttribute="top" id="VK0-fD-nqo"/>
+                            </constraints>
+                            <variation key="default">
+                                <mask key="subviews">
+                                    <exclude reference="cN8-9i-dzy"/>
+                                </mask>
+                                <mask key="constraints">
+                                    <exclude reference="BFG-DS-gwl"/>
+                                    <exclude reference="JvC-fA-o3W"/>
+                                    <exclude reference="Nfo-xo-LP7"/>
+                                    <exclude reference="VK0-fD-nqo"/>
+                                </mask>
+                            </variation>
+                            <variation key="widthClass=compact">
+                                <mask key="subviews">
+                                    <include reference="cN8-9i-dzy"/>
+                                </mask>
+                                <mask key="constraints">
+                                    <include reference="BFG-DS-gwl"/>
+                                    <include reference="JvC-fA-o3W"/>
+                                    <include reference="Nfo-xo-LP7"/>
+                                    <include reference="VK0-fD-nqo"/>
+                                </mask>
+                            </variation>
+                        </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="Dlu-2s-Eyz" id="V5b-li-ffz"/>
                             <outlet property="delegate" destination="Dlu-2s-Eyz" id="J4g-ze-hrI"/>
@@ -437,8 +477,8 @@
     </scenes>
     <resources>
         <image name="add-show-icon" width="16" height="16"/>
-        <image name="off-season-icon" width="115" height="16"/>
-        <image name="peak-season-icon" width="123" height="16"/>
+        <image name="off-season-icon" width="134" height="20"/>
+        <image name="peak-season-icon" width="139" height="20"/>
         <image name="settings-icon" width="18" height="18"/>
     </resources>
 </document>

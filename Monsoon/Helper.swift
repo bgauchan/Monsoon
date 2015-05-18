@@ -67,7 +67,7 @@ class Helper {
     }
     
     func checkIfNotificationExists() {
-        println("Number of notifications scheduled => \(UIApplication.sharedApplication().scheduledLocalNotifications.count)")
+        
         for notification in UIApplication.sharedApplication().scheduledLocalNotifications {
             
             if let info = notification.userInfo as [NSObject: AnyObject]? {

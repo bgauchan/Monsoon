@@ -109,7 +109,7 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     // MARK: - Table view data source
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 105
+        return 103
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

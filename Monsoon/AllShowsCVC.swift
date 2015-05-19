@@ -11,19 +11,29 @@ import Parse
 
 let reuseIdentifier = "tvShowCell"
 
-class AllShowsCVC: UICollectionViewController {
+class AllShowsCVC: UICollectionViewController, UISearchBarDelegate {
     
     var showList = [PFObject]()
     let helper = Helper()
+    
+    var isSearchResultsShown = false // whether the results shown are all shows or searched
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //self.collectionView?.backgroundColor = UIColor(red: 0.93, green: 0.94, blue: 0.95, alpha: 1.0)
+        
+        fetchShows()
+    }
+    
+    func fetchShows(searchTerm: String? = nil) {
         
         var query: PFQuery = PFQuery(className: "TvShow")
         query.whereKeyExists("coverImage")
         query.orderByDescending("updatedAt")
+        
+        if searchTerm != nil {
+            query.whereKey("name", matchesRegex: searchTerm!, modifiers: "i") // makes the query non-case sensitive
+        }
         
         query.findObjectsInBackgroundWithBlock({(NSArray objects, NSError error) in
             if error != nil {
@@ -84,7 +94,10 @@ class AllShowsCVC: UICollectionViewController {
         
         if kind == UICollectionElementKindSectionHeader {
             let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader,
-                withReuseIdentifier:"searchCell", forIndexPath: indexPath) as! UICollectionReusableView
+                withReuseIdentifier:"searchCell", forIndexPath: indexPath) as! SearchBarCell
+            
+            headerView.searchbar.delegate = self
+            
             return headerView
         } else {
             return UICollectionReusableView()
@@ -112,6 +125,25 @@ class AllShowsCVC: UICollectionViewController {
     }
     
     @IBAction func showSearchBar(sender: AnyObject) {
+    }
+    
+    // Search Bar Delegate Methods
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        isSearchResultsShown = true
+        fetchShows(searchTerm: searchBar.text)
+    }
+    
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        if count(searchText) == 0 && isSearchResultsShown {
+            //searchBar.resignFirstResponder()
+            fetchShows()
+            isSearchResultsShown = false
+        }
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        println("cancel")
     }
     
     override func didReceiveMemoryWarning() {

@@ -32,6 +32,7 @@
 		DE99858B1B032B7A0012FA6A /* AllShowsCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99858A1B032B7A0012FA6A /* AllShowsCVC.swift */; };
 		DE99858D1B032C840012FA6A /* TvShowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99858C1B032C840012FA6A /* TvShowCell.swift */; };
 		DEBFE78C1B076DAE00B74EAC /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBFE78B1B076DAE00B74EAC /* Helper.swift */; };
+		DEFCB6A71B0B1EC600018B82 /* SearchBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFCB6A61B0B1EC600018B82 /* SearchBarCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		DE99858A1B032B7A0012FA6A /* AllShowsCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllShowsCVC.swift; sourceTree = "<group>"; };
 		DE99858C1B032C840012FA6A /* TvShowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TvShowCell.swift; sourceTree = "<group>"; };
 		DEBFE78B1B076DAE00B74EAC /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		DEFCB6A61B0B1EC600018B82 /* SearchBarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBarCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 				DE5158091AF83647000404A1 /* WatchlistVC.swift */,
 				DE2B2DFB1AF88AA1009ADD55 /* WatchlistCell.swift */,
 				DE99858A1B032B7A0012FA6A /* AllShowsCVC.swift */,
+				DEFCB6A61B0B1EC600018B82 /* SearchBarCell.swift */,
 				DEBFE78B1B076DAE00B74EAC /* Helper.swift */,
 				DE5221DF1B05E51D003A7BC6 /* Main.storyboard */,
 				DE99858C1B032C840012FA6A /* TvShowCell.swift */,
@@ -300,6 +303,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEFCB6A71B0B1EC600018B82 /* SearchBarCell.swift in Sources */,
 				DE51580A1AF83647000404A1 /* WatchlistVC.swift in Sources */,
 				DE99858B1B032B7A0012FA6A /* AllShowsCVC.swift in Sources */,
 				DEBFE78C1B076DAE00B74EAC /* Helper.swift in Sources */,

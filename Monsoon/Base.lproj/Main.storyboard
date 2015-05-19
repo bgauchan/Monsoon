@@ -24,6 +24,7 @@
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="rQr-VS-dhD"/>
                                     <barButtonItem image="peak-season-icon" id="kXM-lz-da0">
+                                        <inset key="imageInsets" minX="0.0" minY="2" maxX="0.0" maxY="0.0"/>
                                         <color key="tintColor" red="0.69803921568627447" green="0.69803921568627447" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="showActiveShows:" destination="vXZ-lx-hvc" id="ioB-7r-bMR"/>
@@ -31,6 +32,7 @@
                                     </barButtonItem>
                                     <barButtonItem width="15" style="plain" systemItem="fixedSpace" id="8oY-IR-ib1"/>
                                     <barButtonItem image="off-season-icon" style="plain" id="1gL-fa-mEw">
+                                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="1"/>
                                         <color key="tintColor" red="0.69803921568627447" green="0.69803921568627447" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="showEndedShows:" destination="vXZ-lx-hvc" id="kdI-lO-Di3"/>
@@ -39,9 +41,9 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="UxD-Ef-oJP"/>
                                 </items>
                             </toolbar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="102" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="DH8-0R-rIB">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="102" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="DH8-0R-rIB">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.93333333333333335" green="0.94117647058823528" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="watchlistCell" rowHeight="103" id="eJN-Cv-hl5" customClass="WatchlistCell" customModule="Monsoon" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -109,7 +111,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="110" id="lch-ZI-bQS"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Georgia-BoldItalic" family="Georgia" pointSize="13"/>
+                                                    <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="13"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
@@ -235,6 +237,7 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.93333333333333335" green="0.94117647058823528" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="coverImage" destination="Vae-XU-8Pp" id="BoJ-1i-M8C"/>
                                             <outlet property="days" destination="RUv-Kz-nZ9" id="dHk-8V-8WZ"/>
@@ -306,6 +309,7 @@
                     <connections>
                         <outlet property="archivedBtn" destination="1gL-fa-mEw" id="7RK-1A-Hpc"/>
                         <outlet property="tableview" destination="DH8-0R-rIB" id="U8t-aL-umT"/>
+                        <outlet property="toolbar" destination="vYi-9u-jZb" id="wyK-6L-gpg"/>
                         <outlet property="watchlistBtn" destination="kXM-lz-da0" id="3jY-xp-avh"/>
                     </connections>
                 </viewController>
@@ -377,7 +381,8 @@
                                 </connections>
                             </collectionViewCell>
                         </cells>
-                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="searchCell" id="djD-hP-wXc">
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="searchCell" id="djD-hP-wXc" customClass="SearchBarCell" customModule="Monsoon" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="64" width="600" height="50"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
                                 <searchBar contentMode="redraw" placeholder="Search for a TV Show" translatesAutoresizingMaskIntoConstraints="NO" id="cN8-9i-dzy">
@@ -415,6 +420,9 @@
                                     <include reference="VK0-fD-nqo"/>
                                 </mask>
                             </variation>
+                            <connections>
+                                <outlet property="searchbar" destination="cN8-9i-dzy" id="skg-8Y-blD"/>
+                            </connections>
                         </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="Dlu-2s-Eyz" id="V5b-li-ffz"/>

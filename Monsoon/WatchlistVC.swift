@@ -15,6 +15,7 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     @IBOutlet weak var watchlistBtn: UIBarButtonItem!
     @IBOutlet weak var archivedBtn: UIBarButtonItem!
     
+    @IBOutlet weak var toolbar: UIToolbar!
     @IBOutlet weak var tableview: UITableView!
     
     var showList = [PFObject]()
@@ -26,15 +27,7 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableview.separatorColor = UIColor.clearColor()
-        self.tableview.backgroundColor = UIColor(red: 0.93, green: 0.94, blue: 0.95, alpha: 1.0)
-        
-        // Toolbar buttons
-        
         watchlistBtn.tintColor = UIColor.orangeColor()
-        
-        //watchlistBtn.setTitleTextAttributes([ NSForegroundColorAttributeName: UIColor.orangeColor(), NSFontAttributeName: UIFont(name: "Futura", size: 16)!], forState: UIControlState.Normal)
-        //archivedBtn.setTitleTextAttributes([ NSFontAttributeName: UIFont(name: "Futura", size: 16)!], forState: UIControlState.Normal)
         
         helper.checkIfNotificationExists()
     }
@@ -151,9 +144,6 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
             })
         }
         
-        cell.selectionStyle = UITableViewCellSelectionStyle.None
-        cell.backgroundColor = UIColor(red: 0.9, green: 0.93, blue: 0.95, alpha: 1.0)
-        
         return cell
     }
     
@@ -192,9 +182,6 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         watchlistBtn.tintColor = UIColor.orangeColor()
         archivedBtn.tintColor = UIColor.lightGrayColor()
         
-        //watchlistBtn.setTitleTextAttributes([ NSForegroundColorAttributeName: UIColor.orangeColor(), NSFontAttributeName: UIFont(name: "Futura", size: 16)!], forState: UIControlState.Normal)
-        //archivedBtn.setTitleTextAttributes([ NSFontAttributeName: UIFont(name: "Futura", size: 16)!], forState: UIControlState.Normal)
-        
         fetchShowsFromLocalStore()
     }
     
@@ -202,9 +189,6 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         
         archivedBtn.tintColor = UIColor.orangeColor()
         watchlistBtn.tintColor = UIColor.lightGrayColor()
-        
-        //archivedBtn.setTitleTextAttributes([ NSForegroundColorAttributeName: UIColor.orangeColor(), NSFontAttributeName: UIFont(name: "Futura", size: 16)!], forState: UIControlState.Normal)
-        //watchlistBtn.setTitleTextAttributes([ NSFontAttributeName: UIFont(name: "Futura", size: 16)!], forState: UIControlState.Normal)
         
         fetchShowsFromLocalStore(includeEndedShows: true)
     }

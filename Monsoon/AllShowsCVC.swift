@@ -21,6 +21,7 @@ class AllShowsCVC: UICollectionViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 2/255, green: 2/255, blue: 41/255, alpha: 1.0)
         
         fetchShows()
     }

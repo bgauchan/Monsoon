@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14E17e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pAC-8E-TuI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E17e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pAC-8E-TuI">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -385,7 +385,7 @@
                             <rect key="frame" x="0.0" y="64" width="600" height="50"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
-                                <searchBar contentMode="redraw" placeholder="Search for a TV Show" translatesAutoresizingMaskIntoConstraints="NO" id="cN8-9i-dzy">
+                                <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="cN8-9i-dzy">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                     <color key="backgroundColor" red="0.0078431372549019607" green="0.0078431372549019607" blue="0.16078431372549021" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="barTintColor" red="0.0078431372549019607" green="0.0078431372549019607" blue="0.16078431372549021" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -430,14 +430,9 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="TV Shows" id="s4H-AJ-XKi">
-                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="AeS-8D-opK">
+                        <barButtonItem key="leftBarButtonItem" image="close-icon" id="AeS-8D-opK">
                             <connections>
                                 <action selector="closeModal:" destination="Dlu-2s-Eyz" id="k9x-er-BIH"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="qBJ-HT-OCg">
-                            <connections>
-                                <action selector="showSearchBar:" destination="Dlu-2s-Eyz" id="ec7-gP-IHJ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -485,6 +480,7 @@
     </scenes>
     <resources>
         <image name="add-show-icon" width="16" height="16"/>
+        <image name="close-icon" width="15" height="16"/>
         <image name="off-season-icon" width="134" height="20"/>
         <image name="peak-season-icon" width="139" height="20"/>
         <image name="settings-icon" width="18" height="18"/>

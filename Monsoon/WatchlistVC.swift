@@ -30,6 +30,14 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         watchlistBtn.tintColor = UIColor.orangeColor()
         
         helper.checkIfNotificationExists()
+    
+//        let xCoordinate = self.view.frame.width * 0.05
+//        let width = self.view.frame.width * 0.90
+//    
+//        var noTvShowsExistView = UIView(frame: CGRectMake(xCoordinate, 20, width, 300))
+//        noTvShowsExistView.backgroundColor = UIColor.orangeColor()
+//        
+//        self.tableview.addSubview(noTvShowsExistView)
     }
     
     override func viewWillAppear(animated: Bool) {

@@ -29,6 +29,8 @@
 		DE5158121AF83647000404A1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE5158101AF83647000404A1 /* LaunchScreen.xib */; };
 		DE51581E1AF83647000404A1 /* MonsoonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE51581D1AF83647000404A1 /* MonsoonTests.swift */; };
 		DE5221E11B05E51D003A7BC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE5221DF1B05E51D003A7BC6 /* Main.storyboard */; };
+		DE92F6241B0F11ED00D1DDD8 /* NoShowsFoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE92F6231B0F11ED00D1DDD8 /* NoShowsFoundView.swift */; };
+		DE92F6261B0F121000D1DDD8 /* NoShowsFoundView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE92F6251B0F121000D1DDD8 /* NoShowsFoundView.xib */; };
 		DE99858B1B032B7A0012FA6A /* AllShowsCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99858A1B032B7A0012FA6A /* AllShowsCVC.swift */; };
 		DE99858D1B032C840012FA6A /* TvShowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99858C1B032C840012FA6A /* TvShowCell.swift */; };
 		DEBFE78C1B076DAE00B74EAC /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBFE78B1B076DAE00B74EAC /* Helper.swift */; };
@@ -73,6 +75,8 @@
 		DE51581C1AF83647000404A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE51581D1AF83647000404A1 /* MonsoonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsoonTests.swift; sourceTree = "<group>"; };
 		DE5221E01B05E51D003A7BC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Monsoon/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DE92F6231B0F11ED00D1DDD8 /* NoShowsFoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoShowsFoundView.swift; sourceTree = "<group>"; };
+		DE92F6251B0F121000D1DDD8 /* NoShowsFoundView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoShowsFoundView.xib; sourceTree = "<group>"; };
 		DE99858A1B032B7A0012FA6A /* AllShowsCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllShowsCVC.swift; sourceTree = "<group>"; };
 		DE99858C1B032C840012FA6A /* TvShowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TvShowCell.swift; sourceTree = "<group>"; };
 		DEBFE78B1B076DAE00B74EAC /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
@@ -163,6 +167,8 @@
 				DE99858A1B032B7A0012FA6A /* AllShowsCVC.swift */,
 				DEFCB6A61B0B1EC600018B82 /* SearchBarCell.swift */,
 				DEBFE78B1B076DAE00B74EAC /* Helper.swift */,
+				DE92F6231B0F11ED00D1DDD8 /* NoShowsFoundView.swift */,
+				DE92F6251B0F121000D1DDD8 /* NoShowsFoundView.xib */,
 				DE5221DF1B05E51D003A7BC6 /* Main.storyboard */,
 				DE99858C1B032C840012FA6A /* TvShowCell.swift */,
 				DE51580E1AF83647000404A1 /* Images.xcassets */,
@@ -284,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE5221E11B05E51D003A7BC6 /* Main.storyboard in Resources */,
+				DE92F6261B0F121000D1DDD8 /* NoShowsFoundView.xib in Resources */,
 				DE5158121AF83647000404A1 /* LaunchScreen.xib in Resources */,
 				DE51580F1AF83647000404A1 /* Images.xcassets in Resources */,
 			);
@@ -304,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEFCB6A71B0B1EC600018B82 /* SearchBarCell.swift in Sources */,
+				DE92F6241B0F11ED00D1DDD8 /* NoShowsFoundView.swift in Sources */,
 				DE51580A1AF83647000404A1 /* WatchlistVC.swift in Sources */,
 				DE99858B1B032B7A0012FA6A /* AllShowsCVC.swift in Sources */,
 				DEBFE78C1B076DAE00B74EAC /* Helper.swift in Sources */,

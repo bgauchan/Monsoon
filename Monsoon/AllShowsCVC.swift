@@ -17,6 +17,7 @@ class AllShowsCVC: UICollectionViewController, UISearchBarDelegate {
     let helper = Helper()
     
     var isSearchResultsShown = false // whether the results shown are all shows or searched
+    var noShowsFoundView = NoShowsFoundView() // a view to show when no results is found
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,8 +43,22 @@ class AllShowsCVC: UICollectionViewController, UISearchBarDelegate {
             } else {
                 self.showList = objects as! [PFObject]
                 self.collectionView?.reloadData()
+                
+                if self.showList.count < 1 {
+                    self.addNoShowsFoundView(searchTerm!)
+                }
             }
         })
+    }
+    
+    func addNoShowsFoundView(showName: String) {
+        let xCoordinate = self.view.frame.width * 0.05
+        let width = self.view.frame.width * 0.90
+        
+        noShowsFoundView = NoShowsFoundView(frame: CGRectMake(xCoordinate, 60, width, 350))
+        noShowsFoundView.addLabelFor(show: showName)
+        
+        self.collectionView!.addSubview(noShowsFoundView)
     }
 
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -52,6 +67,11 @@ class AllShowsCVC: UICollectionViewController, UISearchBarDelegate {
 
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        if self.showList.count > 0 {
+            noShowsFoundView.removeFromSuperview()
+        }
+        
         return self.showList.count
     }
 

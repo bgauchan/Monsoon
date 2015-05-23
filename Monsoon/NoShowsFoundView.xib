@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E17e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NoShowsFoundView" customModule="Monsoon" customModuleProvider="target">
+            <connections>
+                <outlet property="requestShowBtn" destination="fqd-KH-1pp" id="PEn-kB-McT"/>
+                <outlet property="requestShowLabel" destination="Va5-mK-PIW" id="di3-d5-D7K"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="NoShowsFoundView" customModule="Monsoon" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="350"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-shows-found-icon" translatesAutoresizingMaskIntoConstraints="NO" id="K1g-MH-4ze">
+                    <rect key="frame" x="105" y="50" width="110" height="90"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="110" id="jhK-jh-9To"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fqd-KH-1pp">
+                    <rect key="frame" x="30" y="290" width="260" height="40"/>
+                    <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="260" id="GeH-rx-Ad9"/>
+                        <constraint firstAttribute="height" constant="40" id="Zib-UH-or1"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
+                    <state key="normal" title="Hell Yeah!">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No show named The Big Bang Theory was found. Would you like to request this show to be added?" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Va5-mK-PIW">
+                    <rect key="frame" x="25" y="160" width="270" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="270" id="oz6-Tr-h7F"/>
+                        <constraint firstAttribute="height" constant="100" id="wd6-nc-4pX"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.0078431372549019607" green="0.0078431372549019607" blue="0.16078431372549021" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Va5-mK-PIW" firstAttribute="top" secondItem="K1g-MH-4ze" secondAttribute="bottom" constant="20" id="472-8e-PE3"/>
+                <constraint firstItem="Va5-mK-PIW" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="35" id="5CA-cv-3vi"/>
+                <constraint firstItem="K1g-MH-4ze" firstAttribute="centerX" secondItem="Va5-mK-PIW" secondAttribute="centerX" id="NWe-KD-wEx"/>
+                <constraint firstItem="K1g-MH-4ze" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Ybg-O9-HJ9"/>
+                <constraint firstItem="fqd-KH-1pp" firstAttribute="top" secondItem="Va5-mK-PIW" secondAttribute="bottom" constant="30" id="ffl-IN-cA9"/>
+                <constraint firstItem="K1g-MH-4ze" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="50" id="iMe-je-cOs"/>
+                <constraint firstItem="Va5-mK-PIW" firstAttribute="centerX" secondItem="fqd-KH-1pp" secondAttribute="centerX" id="ohs-rN-OiO"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="605" y="312"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="no-shows-found-icon" width="110" height="90"/>
+    </resources>
+</document>

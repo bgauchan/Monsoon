@@ -7,14 +7,18 @@
 //
 
 import UIKit
+import Parse
 
 class NoShowsFoundView: UIView {
     
+    @IBOutlet weak var iconView: UIImageView!
     @IBOutlet weak var requestShowLabel: UILabel!
     @IBOutlet weak var requestShowBtn: UIButton!
     
     // Our custom view from the XIB file
     var view = UIView()
+    
+    var showName = ""
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -37,17 +41,34 @@ class NoShowsFoundView: UIView {
         super.awakeFromNib()
     }
     
-    func addLabelFor(#show: String) {
+    func addLabelForShow() {
         
         var labelText = NSMutableAttributedString(string: "No show named ", attributes: nil)
         
-        var show = NSMutableAttributedString(string: show, attributes: nil)
+        var show = NSMutableAttributedString(string: showName, attributes: nil)
         show.addAttribute(NSForegroundColorAttributeName, value: UIColor.cyanColor(), range: NSRange(location:0,length:show.length))
         
         labelText.appendAttributedString(show)
         labelText.appendAttributedString(NSAttributedString(string: " was found. Would you like to request this show to be added?"))
         
         requestShowLabel.attributedText = labelText
-        
     }
+    
+    @IBAction func requestToAddShow(sender: AnyObject) {
+        
+        // Add the show searched (but not found) as a request in Parse
+        if count(showName) > 0 {
+            var request = PFObject(className: "Request")
+            request["tvShow"] = showName
+            
+            request.saveInBackgroundWithBlock({ (success: Bool, error: NSError?) -> Void in
+                if success {
+                    self.iconView.image = UIImage(named: "request-sent-icon")
+                    self.requestShowBtn.backgroundColor = UIColor.cyanColor()
+                    self.requestShowBtn.setTitle("Request sent!", forState: UIControlState.Normal)
+                }
+            })
+        }
+    }
+    
 }

@@ -56,7 +56,8 @@ class AllShowsCVC: UICollectionViewController, UISearchBarDelegate {
         let width = self.view.frame.width * 0.90
         
         noShowsFoundView = NoShowsFoundView(frame: CGRectMake(xCoordinate, 60, width, 350))
-        noShowsFoundView.addLabelFor(show: showName)
+        noShowsFoundView.showName = showName
+        noShowsFoundView.addLabelForShow()
         
         self.collectionView!.addSubview(noShowsFoundView)
     }
@@ -145,9 +146,6 @@ class AllShowsCVC: UICollectionViewController, UISearchBarDelegate {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    @IBAction func showSearchBar(sender: AnyObject) {
-    }
-    
     // Search Bar Delegate Methods
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
@@ -157,7 +155,6 @@ class AllShowsCVC: UICollectionViewController, UISearchBarDelegate {
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         if count(searchText) == 0 && isSearchResultsShown {
-            //searchBar.resignFirstResponder()
             fetchShows()
             isSearchResultsShown = false
         }

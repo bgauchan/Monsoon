@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NoShowsFoundView" customModule="Monsoon" customModuleProvider="target">
             <connections>
+                <outlet property="iconView" destination="K1g-MH-4ze" id="i6o-99-g44"/>
                 <outlet property="requestShowBtn" destination="fqd-KH-1pp" id="PEn-kB-McT"/>
                 <outlet property="requestShowLabel" destination="Va5-mK-PIW" id="di3-d5-D7K"/>
             </connections>
@@ -28,11 +29,14 @@
                         <constraint firstAttribute="width" constant="260" id="GeH-rx-Ad9"/>
                         <constraint firstAttribute="height" constant="40" id="Zib-UH-or1"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
+                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
                     <state key="normal" title="Hell Yeah!">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="requestToAddShow:" destination="-1" eventType="touchUpInside" id="wfD-gy-nbI"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No show named The Big Bang Theory was found. Would you like to request this show to be added?" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Va5-mK-PIW">
                     <rect key="frame" x="25" y="160" width="270" height="100"/>

@@ -42,8 +42,9 @@ class Helper {
                 dateString = "Season \(currentSeason) ended on \(dateFormatter.stringFromDate(seasonEndDate))"
             } else {
                 dateString = "Season \(currentSeason) ends in \(dateFormatter.stringFromDate(seasonEndDate))"
-                timeLeft = dateDifferenceInString(seasonEndDate)
             }
+            
+            timeLeft = dateDifferenceInString(seasonEndDate)
         }
         else if dateComparisionResult == NSComparisonResult.OrderedSame
         {

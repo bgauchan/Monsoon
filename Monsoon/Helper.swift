@@ -179,3 +179,9 @@ extension NSDate {
         return NSCalendar.currentCalendar().components(NSCalendarUnit.CalendarUnitSecond, fromDate: date, toDate: self, options: nil).second
     }
 }
+
+extension UIColor {
+    class func darkMonsoonColor() -> UIColor {
+        return UIColor(red: 2/255, green: 2/255, blue: 19/255, alpha: 1.0)
+    }
+}

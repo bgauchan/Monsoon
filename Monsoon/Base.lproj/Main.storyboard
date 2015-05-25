@@ -22,7 +22,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="rQr-VS-dhD"/>
+                                    <barButtonItem style="plain" systemItem="fixedSpace" id="rQr-VS-dhD"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="ank-gf-xjN"/>
                                     <barButtonItem image="peak-season-icon" id="kXM-lz-da0">
                                         <inset key="imageInsets" minX="0.0" minY="2" maxX="0.0" maxY="0.0"/>
                                         <color key="tintColor" red="0.69803921568627447" green="0.69803921568627447" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
@@ -30,7 +31,7 @@
                                             <action selector="showActiveShows:" destination="vXZ-lx-hvc" id="ioB-7r-bMR"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem width="15" style="plain" systemItem="fixedSpace" id="8oY-IR-ib1"/>
+                                    <barButtonItem width="10" style="plain" systemItem="fixedSpace" id="8oY-IR-ib1"/>
                                     <barButtonItem image="off-season-icon" style="plain" id="1gL-fa-mEw">
                                         <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="1"/>
                                         <color key="tintColor" red="0.69803921568627447" green="0.69803921568627447" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
@@ -38,7 +39,8 @@
                                             <action selector="showEndedShows:" destination="vXZ-lx-hvc" id="kdI-lO-Di3"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="UxD-Ef-oJP"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="2lr-eZ-Gqj"/>
+                                    <barButtonItem style="plain" systemItem="fixedSpace" id="UxD-Ef-oJP"/>
                                 </items>
                             </toolbar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="102" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="DH8-0R-rIB">
@@ -61,8 +63,7 @@
                                                             <exclude reference="oxn-Be-KNb"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="5" y="3" width="107" height="100"/>
+                                                    <variation key="widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="oxn-Be-KNb"/>
                                                         </mask>
@@ -82,8 +83,7 @@
                                                             <exclude reference="oWK-eu-eJ4"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="112" y="3" width="204" height="100"/>
+                                                    <variation key="widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="oWK-eu-eJ4"/>
                                                         </mask>
@@ -102,8 +102,7 @@
                                                             <exclude reference="MgM-vR-svf"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="122" y="8" width="130" height="52"/>
+                                                    <variation key="widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="MgM-vR-svf"/>
                                                         </mask>
@@ -124,8 +123,7 @@
                                                             <exclude reference="lch-ZI-bQS"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="122" y="63" width="115" height="30"/>
+                                                    <variation key="widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="lch-ZI-bQS"/>
                                                         </mask>
@@ -136,18 +134,12 @@
                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
                                                     <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="252.5" y="23" width="53.5" height="39"/>
-                                                    </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="days" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUv-Kz-nZ9">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
                                                     <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="269" y="56" width="35" height="21"/>
-                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <constraints>
@@ -320,6 +312,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="archivedBtn" destination="1gL-fa-mEw" id="7RK-1A-Hpc"/>
+                        <outlet property="fixedSpace" destination="8oY-IR-ib1" id="Lkh-vw-g98"/>
                         <outlet property="tableview" destination="DH8-0R-rIB" id="U8t-aL-umT"/>
                         <outlet property="toolbar" destination="vYi-9u-jZb" id="wyK-6L-gpg"/>
                         <outlet property="watchlistBtn" destination="kXM-lz-da0" id="3jY-xp-avh"/>
@@ -336,7 +329,7 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="4c8-H7-2eG">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0078431372549019607" green="0.0078431372549019607" blue="0.16078431372549021" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0078431372549019607" green="0.0078431372549019607" blue="0.074509803921568626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="RAo-0a-8tA">
                             <size key="itemSize" width="50" height="50"/>
                             <size key="headerReferenceSize" width="50" height="50"/>

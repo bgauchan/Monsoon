@@ -15,6 +15,7 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
 
     @IBOutlet weak var watchlistBtn: UIBarButtonItem!
     @IBOutlet weak var archivedBtn: UIBarButtonItem!
+    @IBOutlet weak var fixedSpace: UIBarButtonItem!
     
     @IBOutlet weak var toolbar: UIToolbar!
     @IBOutlet weak var tableview: UITableView!
@@ -28,6 +29,14 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         super.viewDidLoad()
         
         watchlistBtn.tintColor = UIColor.orangeColor()
+        
+        let screenWidth = self.view.frame.size.width
+        
+        if screenWidth > 320 && screenWidth < 414 {
+            fixedSpace.width = 25
+        } else if screenWidth > 375 {
+            fixedSpace.width = 50
+        }
         
         helper.checkIfNotificationExists()
     }

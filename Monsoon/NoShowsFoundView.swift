@@ -30,7 +30,7 @@ class NoShowsFoundView: UIView {
         
         addSubview(view)
         
-        requestShowBtn.layer.cornerRadius = 20
+        requestShowBtn.layer.cornerRadius = 23
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -66,6 +66,7 @@ class NoShowsFoundView: UIView {
                     self.iconView.image = UIImage(named: "request-sent-icon")
                     self.requestShowBtn.backgroundColor = UIColor.cyanColor()
                     self.requestShowBtn.setTitle("Request sent!", forState: UIControlState.Normal)
+                    self.requestShowBtn.setTitleColor(UIColor.darkMonsoonColor(), forState: UIControlState.Normal)
                 }
             })
         }

@@ -60,7 +60,8 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
                     if objects!.count > 0 {
                         let shows = objects as! [PFObject]
                         var seriesIdArray = shows.map { $0.objectForKey("seriesID")! }
-                        self.updateWatchlist(seriesIdArray) // update these pinned shows based on their series ID
+                        
+                        self.updateWatchlist(seriesIdArray, lastFetchedDate: lastFetchedDate)
                     }
                 })
                 
@@ -111,22 +112,34 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     *** query Parse to get the shows with updated info. Once we get them, we first unpin all shows and then we pin
     *** the new ones received. Hence, updating the pinned/saved shows.
     **/
-    func updateWatchlist(seriesIdArray:NSArray) {
+    func updateWatchlist(seriesIdArray:NSArray, lastFetchedDate: NSDate) {
+        
+        println("updating shows...")
         
         var query: PFQuery = PFQuery(className: "TvShow")
         query.whereKey("seriesID", containedIn: seriesIdArray as Array <AnyObject>)
+        query.whereKey("updatedAt", greaterThan: lastFetchedDate)
 
         // Query for new results from the network
         query.findObjectsInBackground().continueWithSuccessBlock({
             (task: BFTask!) -> AnyObject! in
             
-            return PFObject.unpinAllObjectsInBackgroundWithName("watchlist").continueWithSuccessBlock({
+            let shows = task.result as? NSArray
+            
+            return PFObject.unpinAllInBackground(shows as [AnyObject]?, withName: "watchlist").continueWithSuccessBlock({
                 (ignored: BFTask!) -> AnyObject! in
                 
                 // Cache new results
-                let shows = task.result as? NSArray
                 return PFObject.pinAllInBackground(shows as [AnyObject]?, withName: "watchlist").continueWithSuccessBlock({
                     (ignored: BFTask!) -> AnyObject! in
+                    
+                    for show in shows as! Array <AnyObject> {
+                        var tvShow = show as! PFObject
+                        self.helper.removeNotificationIfExists(tvShow["seriesID"] as! Int)  //remove the old notification
+                        self.helper.scheduleNotification(tvShow) // and add a new updated one
+                    }
+                    
+                    println("finsihed updated notifications")
                     
                     self.fetchWatchlist() // once the pinning is done, refresh the view by fetching again
                     return nil
@@ -211,7 +224,7 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
                     self.watchlist.removeAtIndex(indexPath.row) // remove the array
                     tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic) // delete the table row
                     
-                    self.helper.removeNotification(tvShow["seriesID"] as! Int) // remove the notification associated with the show
+                    self.helper.removeNotificationIfExists(tvShow["seriesID"] as! Int) // remove the notification associated with the show
                 }
             })
             

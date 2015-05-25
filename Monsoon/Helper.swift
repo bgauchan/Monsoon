@@ -72,8 +72,6 @@ class Helper {
         for notification in UIApplication.sharedApplication().scheduledLocalNotifications {
             
             if let info = notification.userInfo as [NSObject: AnyObject]? {
-                //var storedSeriesID = info["seriesID"] as! String
-                
                 println("\(notification.alertBody) => \(notification.fireDate)")
             }
         }
@@ -81,29 +79,46 @@ class Helper {
 
     func scheduleNotification(tvShow: PFObject) {
         
-        //let notificationDate = NSDate().dateByAddingTimeInterval(86400)
         var notificationDate: NSDate?
-        
-        var dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "dd MMM yyyy HH:mm:ss"
-        dateFormatter.timeZone = NSTimeZone(name: "GMT")
+        var notificationText = ""
         
         let showID = tvShow["seriesID"] as! Int
+        
+        (notificationText, notificationDate) = getNotificationTextAndDates(tvShow)
+        
+        // don't schedule notifications if there is no notification date set (i.e. tv shows has ended)
+        if notificationDate != nil {
+            var notification = UILocalNotification()
+            notification.alertBody = notificationText
+            notification.alertAction = "open"
+            notification.fireDate = notificationDate
+            notification.timeZone = NSTimeZone(name: "GMT")
+            notification.soundName = UILocalNotificationDefaultSoundName
+            notification.userInfo = ["tvShowID": showID]
+            notification.category = "watchlist"
+            
+            UIApplication.sharedApplication().scheduleLocalNotification(notification)
+            println("notification added!")
+        }
+    }
+    
+    func getNotificationTextAndDates(tvShow: PFObject) -> (notificationText: String, notificationDate: NSDate?) {
+        
+        var notificationDate: NSDate?
+        var notificationText = ""
+        
         let showName = tvShow["name"] as! String
         let currentSeason = tvShow["currentSeason"] as! Int
         let currentDate = NSDate()
         let seasonStartDate = tvShow["seasonStartDate"] as! NSDate
         let seasonEndDate = tvShow["seasonEndDate"] as! NSDate
         
-        
-        var alertText = ""
-        
         var dateComparisionResult:NSComparisonResult = currentDate.compare(seasonStartDate as NSDate)
         
         if dateComparisionResult == NSComparisonResult.OrderedAscending {
             
             // Season hasn't started yet
-            alertText += "Season \(currentSeason) of \(showName) starts tomorrow!"
+            notificationText += "Season \(currentSeason) of \(showName) starts tomorrow!"
             
             // setting the notification date to be a day early = -86400 seconds
             notificationDate = seasonStartDate.dateByAddingTimeInterval(-86400)
@@ -115,32 +130,17 @@ class Helper {
             
             // if the end date is later than today
             if dateComparisionResult == NSComparisonResult.OrderedAscending {
-                alertText += "Season \(currentSeason) of \(showName) ends tomorrow!"
+                notificationText += "Season \(currentSeason) of \(showName) ends tomorrow!"
                 notificationDate = seasonEndDate.dateByAddingTimeInterval(-86400)
             } else {
                 println("Tv Show already ended so no notification was added")
             }
         }
         
-        //notificationDate = NSDate().dateByAddingTimeInterval(10)
-        
-        // don't schedule notifications if there is no notification date set (i.e. tv shows has ended)
-        if notificationDate != nil {
-            var notification = UILocalNotification()
-            notification.alertBody = alertText
-            notification.alertAction = "open"
-            notification.fireDate = notificationDate
-            notification.timeZone = NSTimeZone.defaultTimeZone()
-            notification.soundName = UILocalNotificationDefaultSoundName
-            notification.userInfo = ["tvShowID": showID]
-            notification.category = "watchlist"
-            
-            UIApplication.sharedApplication().scheduleLocalNotification(notification)
-            println("notification added!")
-        }
+        return (notificationText, notificationDate)
     }
     
-    func removeNotification(tvShowID: Int) {
+    func removeNotificationIfExists(tvShowID: Int) {
         for scheduledNotification in UIApplication.sharedApplication().scheduledLocalNotifications {
             
             var notification = scheduledNotification as! UILocalNotification

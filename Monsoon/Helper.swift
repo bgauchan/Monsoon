@@ -68,7 +68,6 @@ class Helper {
     }
     
     func checkIfNotificationExists() {
-        
         for notification in UIApplication.sharedApplication().scheduledLocalNotifications {
             
             if let info = notification.userInfo as [NSObject: AnyObject]? {

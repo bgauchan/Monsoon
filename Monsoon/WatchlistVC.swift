@@ -118,7 +118,7 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         
         var query: PFQuery = PFQuery(className: "TvShow")
         query.whereKey("seriesID", containedIn: seriesIdArray as Array <AnyObject>)
-        query.whereKey("updatedAt", greaterThan: lastFetchedDate)
+        //query.whereKey("updatedAt", greaterThan: lastFetchedDate)
 
         // Query for new results from the network
         query.findObjectsInBackground().continueWithSuccessBlock({

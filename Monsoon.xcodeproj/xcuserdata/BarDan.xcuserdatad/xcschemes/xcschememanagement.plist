@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Monsoon Widget.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>Monsoon.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -18,6 +23,11 @@
 			<true/>
 		</dict>
 		<key>DE5158161AF83647000404A1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DE9BC4C71B142E7900FB4F35</key>
 		<dict>
 			<key>primary</key>
 			<true/>

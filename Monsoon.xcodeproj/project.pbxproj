@@ -23,6 +23,10 @@
 		DE2B2DF71AF87D95009ADD55 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DE2B2DF61AF87D95009ADD55 /* libz.dylib */; };
 		DE2B2DF91AF87DA5009ADD55 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DE2B2DF81AF87DA5009ADD55 /* libsqlite3.dylib */; };
 		DE2B2DFC1AF88AA1009ADD55 /* WatchlistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2B2DFB1AF88AA1009ADD55 /* WatchlistCell.swift */; };
+		DE3360911B145C4200909870 /* WatchlistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2B2DFB1AF88AA1009ADD55 /* WatchlistCell.swift */; };
+		DE3360921B145C4A00909870 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE2B2DDC1AF87BF0009ADD55 /* ParseUI.framework */; };
+		DE3360931B145C5000909870 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE2B2DD71AF87BF0009ADD55 /* Bolts.framework */; };
+		DE3360941B145C5600909870 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE2B2DD81AF87BF0009ADD55 /* Parse.framework */; };
 		DE5158081AF83647000404A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5158071AF83647000404A1 /* AppDelegate.swift */; };
 		DE51580A1AF83647000404A1 /* WatchlistVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5158091AF83647000404A1 /* WatchlistVC.swift */; };
 		DE51580F1AF83647000404A1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE51580E1AF83647000404A1 /* Images.xcassets */; };
@@ -33,6 +37,10 @@
 		DE92F6261B0F121000D1DDD8 /* NoShowsFoundView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE92F6251B0F121000D1DDD8 /* NoShowsFoundView.xib */; };
 		DE99858B1B032B7A0012FA6A /* AllShowsCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99858A1B032B7A0012FA6A /* AllShowsCVC.swift */; };
 		DE99858D1B032C840012FA6A /* TvShowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99858C1B032C840012FA6A /* TvShowCell.swift */; };
+		DE9BC4CA1B142E7900FB4F35 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9BC4C91B142E7900FB4F35 /* NotificationCenter.framework */; };
+		DE9BC4CF1B142E7900FB4F35 /* WatchlistTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9BC4CE1B142E7900FB4F35 /* WatchlistTVC.swift */; };
+		DE9BC4D11B142E7900FB4F35 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE9BC4D01B142E7900FB4F35 /* MainInterface.storyboard */; };
+		DE9BC4D41B142E7900FB4F35 /* Monsoon Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DE9BC4C81B142E7900FB4F35 /* Monsoon Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DEBFE78C1B076DAE00B74EAC /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBFE78B1B076DAE00B74EAC /* Helper.swift */; };
 		DEFCB6A71B0B1EC600018B82 /* SearchBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFCB6A61B0B1EC600018B82 /* SearchBarCell.swift */; };
 /* End PBXBuildFile section */
@@ -45,7 +53,28 @@
 			remoteGlobalIDString = DE5158011AF83647000404A1;
 			remoteInfo = Monsoon;
 		};
+		DE9BC4D21B142E7900FB4F35 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE5157FA1AF83647000404A1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE9BC4C71B142E7900FB4F35;
+			remoteInfo = "Monsoon Widget";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DE9BC4D81B142E7900FB4F35 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				DE9BC4D41B142E7900FB4F35 /* Monsoon Widget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		DE2B2DD71AF87BF0009ADD55 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -79,6 +108,12 @@
 		DE92F6251B0F121000D1DDD8 /* NoShowsFoundView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoShowsFoundView.xib; sourceTree = "<group>"; };
 		DE99858A1B032B7A0012FA6A /* AllShowsCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllShowsCVC.swift; sourceTree = "<group>"; };
 		DE99858C1B032C840012FA6A /* TvShowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TvShowCell.swift; sourceTree = "<group>"; };
+		DE9BC4C81B142E7900FB4F35 /* Monsoon Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Monsoon Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE9BC4C91B142E7900FB4F35 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		DE9BC4CD1B142E7900FB4F35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE9BC4CE1B142E7900FB4F35 /* WatchlistTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistTVC.swift; sourceTree = "<group>"; };
+		DE9BC4D01B142E7900FB4F35 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		DE9BC4D91B142E8F00FB4F35 /* Monsoon Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Monsoon Widget.entitlements"; sourceTree = "<group>"; };
 		DEBFE78B1B076DAE00B74EAC /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		DEFCB6A61B0B1EC600018B82 /* SearchBarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBarCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,6 +148,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DE9BC4C51B142E7900FB4F35 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE3360931B145C5000909870 /* Bolts.framework in Frameworks */,
+				DE3360921B145C4A00909870 /* ParseUI.framework in Frameworks */,
+				DE3360941B145C5600909870 /* Parse.framework in Frameworks */,
+				DE9BC4CA1B142E7900FB4F35 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -134,6 +180,7 @@
 				DE2B2DD81AF87BF0009ADD55 /* Parse.framework */,
 				DE2B2DD91AF87BF0009ADD55 /* ParseCrashReporting.framework */,
 				DE2B2DDC1AF87BF0009ADD55 /* ParseUI.framework */,
+				DE9BC4C91B142E7900FB4F35 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -142,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				DE5158041AF83647000404A1 /* Monsoon */,
+				DE9BC4CB1B142E7900FB4F35 /* Monsoon Widget */,
 				DE2B2DE31AF87CD8009ADD55 /* Frameworks */,
 				DE51581A1AF83647000404A1 /* MonsoonTests */,
 				DE5158031AF83647000404A1 /* Products */,
@@ -153,6 +201,7 @@
 			children = (
 				DE5158021AF83647000404A1 /* Monsoon.app */,
 				DE5158171AF83647000404A1 /* MonsoonTests.xctest */,
+				DE9BC4C81B142E7900FB4F35 /* Monsoon Widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -165,12 +214,12 @@
 				DE5158091AF83647000404A1 /* WatchlistVC.swift */,
 				DE2B2DFB1AF88AA1009ADD55 /* WatchlistCell.swift */,
 				DE99858A1B032B7A0012FA6A /* AllShowsCVC.swift */,
+				DE99858C1B032C840012FA6A /* TvShowCell.swift */,
 				DEFCB6A61B0B1EC600018B82 /* SearchBarCell.swift */,
 				DEBFE78B1B076DAE00B74EAC /* Helper.swift */,
 				DE92F6231B0F11ED00D1DDD8 /* NoShowsFoundView.swift */,
 				DE92F6251B0F121000D1DDD8 /* NoShowsFoundView.xib */,
 				DE5221DF1B05E51D003A7BC6 /* Main.storyboard */,
-				DE99858C1B032C840012FA6A /* TvShowCell.swift */,
 				DE51580E1AF83647000404A1 /* Images.xcassets */,
 				DE5158101AF83647000404A1 /* LaunchScreen.xib */,
 				DE5158051AF83647000404A1 /* Supporting Files */,
@@ -203,6 +252,25 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		DE9BC4CB1B142E7900FB4F35 /* Monsoon Widget */ = {
+			isa = PBXGroup;
+			children = (
+				DE9BC4D91B142E8F00FB4F35 /* Monsoon Widget.entitlements */,
+				DE9BC4CE1B142E7900FB4F35 /* WatchlistTVC.swift */,
+				DE9BC4D01B142E7900FB4F35 /* MainInterface.storyboard */,
+				DE9BC4CC1B142E7900FB4F35 /* Supporting Files */,
+			);
+			path = "Monsoon Widget";
+			sourceTree = "<group>";
+		};
+		DE9BC4CC1B142E7900FB4F35 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DE9BC4CD1B142E7900FB4F35 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -213,10 +281,12 @@
 				DE5157FE1AF83647000404A1 /* Sources */,
 				DE5157FF1AF83647000404A1 /* Frameworks */,
 				DE5158001AF83647000404A1 /* Resources */,
+				DE9BC4D81B142E7900FB4F35 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DE9BC4D31B142E7900FB4F35 /* PBXTargetDependency */,
 			);
 			name = Monsoon;
 			productName = Monsoon;
@@ -241,6 +311,23 @@
 			productReference = DE5158171AF83647000404A1 /* MonsoonTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		DE9BC4C71B142E7900FB4F35 /* Monsoon Widget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE9BC4D71B142E7900FB4F35 /* Build configuration list for PBXNativeTarget "Monsoon Widget" */;
+			buildPhases = (
+				DE9BC4C41B142E7900FB4F35 /* Sources */,
+				DE9BC4C51B142E7900FB4F35 /* Frameworks */,
+				DE9BC4C61B142E7900FB4F35 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Monsoon Widget";
+			productName = "Monsoon Widget";
+			productReference = DE9BC4C81B142E7900FB4F35 /* Monsoon Widget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -263,6 +350,15 @@
 						CreatedOnToolsVersion = 6.3.1;
 						TestTargetID = DE5158011AF83647000404A1;
 					};
+					DE9BC4C71B142E7900FB4F35 = {
+						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = 3R3T8L6XWF;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 				};
 			};
 			buildConfigurationList = DE5157FD1AF83647000404A1 /* Build configuration list for PBXProject "Monsoon" */;
@@ -280,6 +376,7 @@
 			targets = (
 				DE5158011AF83647000404A1 /* Monsoon */,
 				DE5158161AF83647000404A1 /* MonsoonTests */,
+				DE9BC4C71B142E7900FB4F35 /* Monsoon Widget */,
 			);
 		};
 /* End PBXProject section */
@@ -300,6 +397,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE9BC4C61B142E7900FB4F35 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE9BC4D11B142E7900FB4F35 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,6 +434,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DE9BC4C41B142E7900FB4F35 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE9BC4CF1B142E7900FB4F35 /* WatchlistTVC.swift in Sources */,
+				DE3360911B145C4200909870 /* WatchlistCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -336,6 +450,11 @@
 			isa = PBXTargetDependency;
 			target = DE5158011AF83647000404A1 /* Monsoon */;
 			targetProxy = DE5158181AF83647000404A1 /* PBXContainerItemProxy */;
+		};
+		DE9BC4D31B142E7900FB4F35 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE9BC4C71B142E7900FB4F35 /* Monsoon Widget */;
+			targetProxy = DE9BC4D21B142E7900FB4F35 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -511,6 +630,46 @@
 			};
 			name = Release;
 		};
+		DE9BC4D51B142E7900FB4F35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Monsoon Widget/Monsoon Widget.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Monsoon Widget/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		DE9BC4D61B142E7900FB4F35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Monsoon Widget/Monsoon Widget.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = "Monsoon Widget/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -537,6 +696,15 @@
 			buildConfigurations = (
 				DE5158251AF83647000404A1 /* Debug */,
 				DE5158261AF83647000404A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE9BC4D71B142E7900FB4F35 /* Build configuration list for PBXNativeTarget "Monsoon Widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE9BC4D51B142E7900FB4F35 /* Debug */,
+				DE9BC4D61B142E7900FB4F35 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

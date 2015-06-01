@@ -6,5 +6,9 @@
 	<array>
 		<string>group.com.bardan.monsoon</string>
 	</array>
+	<key>keychain-access-groups</key>
+	<array>
+		<string>$(AppIdentifierPrefix)Bardan-Gauchan.Monsoon</string>
+	</array>
 </dict>
 </plist>

@@ -11,7 +11,7 @@ import Parse
 
 class Helper {
     
-    func getDateStringAndTimeLeft(tvShow: PFObject)  -> (dateString: String, timeLeft: Int) {
+    class func getDateStringAndTimeLeft(tvShow: PFObject)  -> (dateString: String, timeLeft: Int) {
         
         var dateString = ""
         var timeLeft = 0
@@ -54,54 +54,20 @@ class Helper {
         return (dateString, timeLeft)
     }
     
-    private func dateDifferenceInString(date: NSDate) -> Int {
+    class func dateDifferenceInString(date: NSDate) -> Int {
         
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateStyle = .MediumStyle
         dateFormatter.timeZone = NSTimeZone()
         
         var currentDate = NSDate()
-        let currentDateString = dateFormatter.stringFromDate(currentDate)
+        var currentDateString = dateFormatter.stringFromDate(currentDate)
         currentDate = dateFormatter.dateFromString(currentDateString)!
         
         return date.daysFrom(currentDate)
     }
     
-    func checkIfNotificationExists() {
-        for notification in UIApplication.sharedApplication().scheduledLocalNotifications {
-            
-            if let info = notification.userInfo as [NSObject: AnyObject]? {
-                println("\(notification.alertBody) => \(notification.fireDate)")
-            }
-        }
-    }
-
-    func scheduleNotification(tvShow: PFObject) {
-        
-        var notificationDate: NSDate?
-        var notificationText = ""
-        
-        let showID = tvShow["seriesID"] as! Int
-        
-        (notificationText, notificationDate) = getNotificationTextAndDates(tvShow)
-        
-        // don't schedule notifications if there is no notification date set (i.e. tv shows has ended)
-        if notificationDate != nil {
-            var notification = UILocalNotification()
-            notification.alertBody = notificationText
-            notification.alertAction = "open"
-            notification.fireDate = notificationDate
-            notification.timeZone = NSTimeZone(name: "GMT")
-            notification.soundName = UILocalNotificationDefaultSoundName
-            notification.userInfo = ["tvShowID": showID]
-            notification.category = "watchlist"
-            
-            UIApplication.sharedApplication().scheduleLocalNotification(notification)
-            println("notification added!")
-        }
-    }
-    
-    func getNotificationTextAndDates(tvShow: PFObject) -> (notificationText: String, notificationDate: NSDate?) {
+    class func getNotificationTextAndDates(tvShow: PFObject) -> (notificationText: String, notificationDate: NSDate?) {
         
         var notificationDate: NSDate?
         var notificationText = ""
@@ -137,21 +103,6 @@ class Helper {
         }
         
         return (notificationText, notificationDate)
-    }
-    
-    func removeNotificationIfExists(tvShowID: Int) {
-        for scheduledNotification in UIApplication.sharedApplication().scheduledLocalNotifications {
-            
-            var notification = scheduledNotification as! UILocalNotification
-            
-            if let info = notification.userInfo as [NSObject: AnyObject]? {
-                var storedSeriesID = info["tvShowID"] as! Int
-                
-                if tvShowID == storedSeriesID {
-                    UIApplication.sharedApplication().cancelLocalNotification(notification)
-                }
-            }
-        }
     }
 }
 

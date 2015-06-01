@@ -42,7 +42,22 @@
 		DE9BC4D11B142E7900FB4F35 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE9BC4D01B142E7900FB4F35 /* MainInterface.storyboard */; };
 		DE9BC4D41B142E7900FB4F35 /* Monsoon Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DE9BC4C81B142E7900FB4F35 /* Monsoon Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DEBFE78C1B076DAE00B74EAC /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBFE78B1B076DAE00B74EAC /* Helper.swift */; };
+		DEE3C1711B1C3F8600EE96E6 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9BC4C91B142E7900FB4F35 /* NotificationCenter.framework */; };
+		DEE3C1741B1C473400EE96E6 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE3C1731B1C473400EE96E6 /* NotificationManager.swift */; };
+		DEE3C1751B1C523300EE96E6 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBFE78B1B076DAE00B74EAC /* Helper.swift */; };
 		DEFCB6A71B0B1EC600018B82 /* SearchBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFCB6A61B0B1EC600018B82 /* SearchBarCell.swift */; };
+		DEFCF1471B1BED42004FFEDE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE2B2DE41AF87D18009ADD55 /* AudioToolbox.framework */; };
+		DEFCF1481B1BED4B004FFEDE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE2B2DF41AF87D89009ADD55 /* SystemConfiguration.framework */; };
+		DEFCF1491B1BED4B004FFEDE /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE2B2DF21AF87D7D009ADD55 /* StoreKit.framework */; };
+		DEFCF14A1B1BED4B004FFEDE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE2B2DF01AF87D6A009ADD55 /* Security.framework */; };
+		DEFCF14B1B1BED4B004FFEDE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE2B2DEE1AF87D4B009ADD55 /* QuartzCore.framework */; };
+		DEFCF14C1B1BED4B004FFEDE /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE2B2DEC1AF87D41009ADD55 /* MobileCoreServices.framework */; };
+		DEFCF14D1B1BED4B004FFEDE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE2B2DEA1AF87D35009ADD55 /* CoreLocation.framework */; };
+		DEFCF14E1B1BED4B004FFEDE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE2B2DE81AF87D2B009ADD55 /* CoreGraphics.framework */; };
+		DEFCF14F1B1BED4B004FFEDE /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE2B2DE61AF87D22009ADD55 /* CFNetwork.framework */; };
+		DEFCF1501B1BED4B004FFEDE /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE2B2DD91AF87BF0009ADD55 /* ParseCrashReporting.framework */; };
+		DEFCF1511B1BED53004FFEDE /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DE2B2DF81AF87DA5009ADD55 /* libsqlite3.dylib */; };
+		DEFCF1521B1BED53004FFEDE /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DE2B2DF61AF87D95009ADD55 /* libz.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +130,7 @@
 		DE9BC4D01B142E7900FB4F35 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		DE9BC4D91B142E8F00FB4F35 /* Monsoon Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Monsoon Widget.entitlements"; sourceTree = "<group>"; };
 		DEBFE78B1B076DAE00B74EAC /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		DEE3C1731B1C473400EE96E6 /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		DEFCB6A61B0B1EC600018B82 /* SearchBarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBarCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,6 +139,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEE3C1711B1C3F8600EE96E6 /* NotificationCenter.framework in Frameworks */,
 				DE2B2DF91AF87DA5009ADD55 /* libsqlite3.dylib in Frameworks */,
 				DE2B2DF71AF87D95009ADD55 /* libz.dylib in Frameworks */,
 				DE2B2DF51AF87D89009ADD55 /* SystemConfiguration.framework in Frameworks */,
@@ -152,10 +169,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEFCF14E1B1BED4B004FFEDE /* CoreGraphics.framework in Frameworks */,
 				DE3360931B145C5000909870 /* Bolts.framework in Frameworks */,
+				DEFCF14D1B1BED4B004FFEDE /* CoreLocation.framework in Frameworks */,
+				DEFCF1491B1BED4B004FFEDE /* StoreKit.framework in Frameworks */,
 				DE3360921B145C4A00909870 /* ParseUI.framework in Frameworks */,
+				DEFCF1501B1BED4B004FFEDE /* ParseCrashReporting.framework in Frameworks */,
+				DEFCF14F1B1BED4B004FFEDE /* CFNetwork.framework in Frameworks */,
+				DEFCF14C1B1BED4B004FFEDE /* MobileCoreServices.framework in Frameworks */,
+				DEFCF1471B1BED42004FFEDE /* AudioToolbox.framework in Frameworks */,
 				DE3360941B145C5600909870 /* Parse.framework in Frameworks */,
+				DEFCF1481B1BED4B004FFEDE /* SystemConfiguration.framework in Frameworks */,
+				DEFCF14A1B1BED4B004FFEDE /* Security.framework in Frameworks */,
 				DE9BC4CA1B142E7900FB4F35 /* NotificationCenter.framework in Frameworks */,
+				DEFCF1521B1BED53004FFEDE /* libz.dylib in Frameworks */,
+				DEFCF1511B1BED53004FFEDE /* libsqlite3.dylib in Frameworks */,
+				DEFCF14B1B1BED4B004FFEDE /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,6 +246,7 @@
 				DE99858C1B032C840012FA6A /* TvShowCell.swift */,
 				DEFCB6A61B0B1EC600018B82 /* SearchBarCell.swift */,
 				DEBFE78B1B076DAE00B74EAC /* Helper.swift */,
+				DEE3C1731B1C473400EE96E6 /* NotificationManager.swift */,
 				DE92F6231B0F11ED00D1DDD8 /* NoShowsFoundView.swift */,
 				DE92F6251B0F121000D1DDD8 /* NoShowsFoundView.xib */,
 				DE5221DF1B05E51D003A7BC6 /* Main.storyboard */,
@@ -344,6 +374,9 @@
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
 							};
+							com.apple.Keychain = {
+								enabled = 1;
+							};
 						};
 					};
 					DE5158161AF83647000404A1 = {
@@ -355,6 +388,9 @@
 						DevelopmentTeam = 3R3T8L6XWF;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.Keychain = {
 								enabled = 1;
 							};
 						};
@@ -418,6 +454,7 @@
 				DEFCB6A71B0B1EC600018B82 /* SearchBarCell.swift in Sources */,
 				DE92F6241B0F11ED00D1DDD8 /* NoShowsFoundView.swift in Sources */,
 				DE51580A1AF83647000404A1 /* WatchlistVC.swift in Sources */,
+				DEE3C1741B1C473400EE96E6 /* NotificationManager.swift in Sources */,
 				DE99858B1B032B7A0012FA6A /* AllShowsCVC.swift in Sources */,
 				DEBFE78C1B076DAE00B74EAC /* Helper.swift in Sources */,
 				DE99858D1B032C840012FA6A /* TvShowCell.swift in Sources */,
@@ -440,6 +477,7 @@
 			files = (
 				DE9BC4CF1B142E7900FB4F35 /* WatchlistTVC.swift in Sources */,
 				DE3360911B145C4200909870 /* WatchlistCell.swift in Sources */,
+				DEE3C1751B1C523300EE96E6 /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

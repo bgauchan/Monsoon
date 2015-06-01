@@ -17,7 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        
         UINavigationBar.appearance().barTintColor = UIColor.orangeColor()
         UINavigationBar.appearance().translucent = false
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
@@ -29,9 +28,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Parse Setup
         Parse.enableLocalDatastore()
         
-        // Initialize Parse.
-        Parse.setApplicationId("IP1rs5my0SYAbjLLUksy2D83vTWQGnNh2xp1Frsb",
-            clientKey: "eeEM2IgofWFTRmYe4F62UoOLNQq8Tf63IUU7gsq9")
+        // Enable data sharing in main app.
+        Parse.enableDataSharingWithApplicationGroupIdentifier("group.com.bardan.monsoon")
+        
+        // Initialize Parse.        
+        Parse.setApplicationId("IP1rs5my0SYAbjLLUksy2D83vTWQGnNh2xp1Frsb", clientKey: "eeEM2IgofWFTRmYe4F62UoOLNQq8Tf63IUU7gsq9")
         
         // [Optional] Track statistics around application opens.
         PFAnalytics.trackAppOpenedWithLaunchOptionsInBackground(launchOptions, block: nil)

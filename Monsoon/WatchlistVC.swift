@@ -23,7 +23,6 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     var watchlist = [PFObject]()
     
     let defaults = NSUserDefaults(suiteName: "group.com.bardan.monsoon")!
-    let helper = Helper()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +37,7 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
             fixedSpace.width = 50
         }
         
-        helper.checkIfNotificationExists()
+        NotificationManager.checkIfNotificationExists()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -135,8 +134,9 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
                     
                     for show in shows as! Array <AnyObject> {
                         var tvShow = show as! PFObject
-                        self.helper.removeNotificationIfExists(tvShow["seriesID"] as! Int)  //remove the old notification
-                        self.helper.scheduleNotification(tvShow) // and add a new updated one
+                        
+                        NotificationManager.removeNotificationIfExists(tvShow["seriesID"] as! Int) //remove the old notification
+                        NotificationManager.scheduleNotification(tvShow) // and add a new updated one
                     }
                     
                     println("finsihed updated notifications")
@@ -154,8 +154,8 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         self.watchlist.sort {
             tvShow1, tvShow2 in
             
-            var (startOrEnd1: String, time1: Int) = self.helper.getDateStringAndTimeLeft(tvShow1)
-            var (startOrEnd2: String, time2: Int) = self.helper.getDateStringAndTimeLeft(tvShow2)
+            var (startOrEnd1: String, time1: Int) = Helper.getDateStringAndTimeLeft(tvShow1)
+            var (startOrEnd2: String, time2: Int) = Helper.getDateStringAndTimeLeft(tvShow2)
             
             return time1 < time2
         }
@@ -176,7 +176,7 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         
         var tvShow = self.watchlist[indexPath.row] as PFObject
         
-        var (startOrEnd: String, timeLeft: Int) = helper.getDateStringAndTimeLeft(tvShow)
+        var (startOrEnd: String, timeLeft: Int) = Helper.getDateStringAndTimeLeft(tvShow)
         cell.startOrEndDate.text = startOrEnd
         
         if timeLeft >= 0 && timeLeft < 10 {
@@ -224,7 +224,8 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
                     self.watchlist.removeAtIndex(indexPath.row) // remove the array
                     tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic) // delete the table row
                     
-                    self.helper.removeNotificationIfExists(tvShow["seriesID"] as! Int) // remove the notification associated with the show
+                    // remove the notification associated with the show
+                    NotificationManager.removeNotificationIfExists(tvShow["seriesID"] as! Int)
                 }
             })
             

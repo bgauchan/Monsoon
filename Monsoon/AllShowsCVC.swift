@@ -103,7 +103,7 @@ class AllShowsCVC: UICollectionViewController, UISearchBarDelegate {
                 println("Pinning was successful")
                 
                 // set up a notification for the tv show
-                self.helper.scheduleNotification(tvShow)
+                NotificationManager.scheduleNotification(tvShow)
                 
                 self.dismissViewControllerAnimated(true, completion: nil)
             } else {

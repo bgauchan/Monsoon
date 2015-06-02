@@ -67,13 +67,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
         
-        var alert = UIAlertController(title: "Notification", message: notification.alertBody, preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
-        
-        let navigationController = application.windows[0].rootViewController as! UINavigationController
-        let activeViewCont = navigationController.visibleViewController
-        
-        activeViewCont.presentViewController(alert, animated: true, completion: nil)
+        // only present the alert if the app is not in background
+        if application.applicationState != UIApplicationState.Background {
+            
+            var alert = UIAlertController(title: "Notification", message: notification.alertBody, preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+            
+            let navigationController = application.windows[0].rootViewController as! UINavigationController
+            let activeViewCont = navigationController.visibleViewController
+            
+            activeViewCont.presentViewController(alert, animated: true, completion: nil)
+            
+        }
     }
 }
 

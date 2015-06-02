@@ -14,6 +14,8 @@ class WatchlistTVC: UITableViewController, NCWidgetProviding {
     
     var watchlist = [PFObject]()
     
+    let defaults = NSUserDefaults(suiteName: "group.com.bardan.monsoon")!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,8 +30,6 @@ class WatchlistTVC: UITableViewController, NCWidgetProviding {
             clientKey: "eeEM2IgofWFTRmYe4F62UoOLNQq8Tf63IUU7gsq9")
         
         fetchWatchlist()
-        
-        self.preferredContentSize = CGSize(width: 0, height: 150)        
     }
     
     /**
@@ -40,15 +40,46 @@ class WatchlistTVC: UITableViewController, NCWidgetProviding {
         var query: PFQuery = PFQuery(className: "TvShow")
         query.whereKey("seasonEndDate", greaterThan: NSDate())
         
-        query.orderByAscending("seasonEndDate")
+        query.limit = 8
         query.fromLocalDatastore()
         
         query.findObjectsInBackgroundWithBlock({(NSArray shows, NSError error) in
             if error == nil {
                 self.watchlist = shows as! [PFObject]
+                self.sortShowsByTimeLeft()
+                
+                while self.watchlist.count > 5 {
+                    self.watchlist.removeLast()
+                }
+                
                 self.tableView.reloadData()
+                self.updateWidget()
             }
         })
+    }
+    
+    func updateWidget() {
+        
+        var tableHeight = self.watchlist.count * 50
+        
+        if tableHeight < 1 {
+            tableHeight = 10
+        }
+        
+        self.preferredContentSize = CGSize(width: 0, height: tableHeight)
+    }
+    
+    func sortShowsByTimeLeft() {
+        
+        // sort by dates closest to day
+        self.watchlist.sort {
+            tvShow1, tvShow2 in
+            
+            var (startOrEnd1: String, time1: Int) = Helper.getDateStringAndTimeLeft(tvShow1)
+            var (startOrEnd2: String, time2: Int) = Helper.getDateStringAndTimeLeft(tvShow2)
+            
+            return time1 < time2
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -61,8 +92,21 @@ class WatchlistTVC: UITableViewController, NCWidgetProviding {
         // If an error is encountered, use NCUpdateResult.Failed
         // If there's no update required, use NCUpdateResult.NoData
         // If there's an update, use NCUpdateResult.NewData
-
-        completionHandler(NCUpdateResult.NewData)
+        
+        if let widgetShouldUpdate = defaults.objectForKey("shouldWidgetUpdate") as? Bool  {
+            println("update process starting..")
+            if widgetShouldUpdate {
+                
+                println("updating view due to widgetShouldUpdate")
+                
+                defaults.setObject(false, forKey: "shouldWidgetUpdate")
+                defaults.synchronize()
+                
+                completionHandler(NCUpdateResult.NewData)
+            } else {
+                completionHandler(NCUpdateResult.NoData)
+            }            
+        }
     }
     
     // MARK: - Table view data source
@@ -118,15 +162,9 @@ class WatchlistTVC: UITableViewController, NCWidgetProviding {
     }
     
     func widgetMarginInsetsForProposedMarginInsets(defaultMarginInsets: UIEdgeInsets) -> UIEdgeInsets {
-        
-        // move the UI a little to the left on iphone 4/5 since the width is too small to fit in al the info nicely
-        if self.view.frame.width < 375 {
-            let newInsets = UIEdgeInsets(top: defaultMarginInsets.top + 10, left: defaultMarginInsets.left - 34,
-                bottom: defaultMarginInsets.bottom - 20, right: defaultMarginInsets.right)
-            return newInsets
-        } else {
-            return defaultMarginInsets
-        }
+        let newInsets = UIEdgeInsets(top: defaultMarginInsets.top + 10, left: defaultMarginInsets.left - 34,
+            bottom: defaultMarginInsets.bottom - 20, right: defaultMarginInsets.right)
+        return newInsets
     }
     
 }

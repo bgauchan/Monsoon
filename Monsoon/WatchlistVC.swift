@@ -54,6 +54,9 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
                 var query: PFQuery = PFQuery(className: "TvShow")
                 query.fromLocalDatastore()
                 
+                // First we get all the seriesID of the shows that are saved/pinned. Then we use that array
+                // of seriesID to get only those shows from the server (to update each one's info)
+                
                 query.findObjectsInBackgroundWithBlock({(NSArray objects, NSError error) in
                     
                     if objects!.count > 0 {
@@ -141,6 +144,8 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
                     
                     println("finsihed updated notifications")
                     
+                    self.defaults.setObject(true, forKey: "shouldWidgetUpdate") // tell widget to update the view
+                    
                     self.fetchWatchlist() // once the pinning is done, refresh the view by fetching again
                     return nil
                 })
@@ -222,10 +227,14 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
             tvShow.unpinInBackgroundWithName("watchlist", block: { (success: Bool, error: NSError?) -> Void in
                 if success {
                     self.watchlist.removeAtIndex(indexPath.row) // remove the array
-                    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic) // delete the table row
+                    
+                    // delete the table row
+                    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
                     
                     // remove the notification associated with the show
                     NotificationManager.removeNotificationIfExists(tvShow["seriesID"] as! Int)
+                    
+                    self.defaults.setObject(true, forKey: "shouldWidgetUpdate") // tell widget to update the view
                 }
             })
             
@@ -264,6 +273,7 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
             PFObject.unpinAllInBackground(self.watchlist, withName: "watchlist", block: { (success: Bool, error: NSError?) -> Void in
                 if success {
                     print("Cleared all shows...\n")
+                    self.defaults.setObject(true, forKey: "shouldWidgetUpdate") // tell widget to update the view
                 } else {
                     print("Unpin unsuccessful \n")
                 }

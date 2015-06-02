@@ -18,6 +18,8 @@ class AllShowsCVC: UICollectionViewController, UISearchBarDelegate {
     
     var isSearchResultsShown = false // whether the results shown are all shows or searched
     var noShowsFoundView = NoShowsFoundView() // a view to show when no results is found
+    
+    let defaults = NSUserDefaults(suiteName: "group.com.bardan.monsoon")!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,6 +106,8 @@ class AllShowsCVC: UICollectionViewController, UISearchBarDelegate {
                 
                 // set up a notification for the tv show
                 NotificationManager.scheduleNotification(tvShow)
+                
+                self.defaults.setObject(true, forKey: "shouldWidgetUpdate") // tell widget to update the view
                 
                 self.dismissViewControllerAnimated(true, completion: nil)
             } else {

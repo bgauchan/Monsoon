@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE04784A1B26BC2D0036A959 /* Nexa-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = DE0478491B26BC2D0036A959 /* Nexa-Bold.otf */; };
+		DE04784B1B26BC2D0036A959 /* Nexa-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = DE0478491B26BC2D0036A959 /* Nexa-Bold.otf */; };
 		DE2B2DDD1AF87BF0009ADD55 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE2B2DD71AF87BF0009ADD55 /* Bolts.framework */; };
 		DE2B2DDE1AF87BF0009ADD55 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE2B2DD81AF87BF0009ADD55 /* Parse.framework */; };
 		DE2B2DDF1AF87BF0009ADD55 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE2B2DD91AF87BF0009ADD55 /* ParseCrashReporting.framework */; };
@@ -92,6 +94,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DE0478491B26BC2D0036A959 /* Nexa-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Nexa-Bold.otf"; path = "../Nexa-Bold.otf"; sourceTree = "<group>"; };
 		DE2B2DD71AF87BF0009ADD55 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		DE2B2DD81AF87BF0009ADD55 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		DE2B2DD91AF87BF0009ADD55 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
@@ -260,6 +263,7 @@
 		DE5158051AF83647000404A1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DE0478491B26BC2D0036A959 /* Nexa-Bold.otf */,
 				DE5158061AF83647000404A1 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -425,6 +429,7 @@
 				DE5221E11B05E51D003A7BC6 /* Main.storyboard in Resources */,
 				DE92F6261B0F121000D1DDD8 /* NoShowsFoundView.xib in Resources */,
 				DE5158121AF83647000404A1 /* LaunchScreen.xib in Resources */,
+				DE04784A1B26BC2D0036A959 /* Nexa-Bold.otf in Resources */,
 				DE51580F1AF83647000404A1 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -441,6 +446,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE9BC4D11B142E7900FB4F35 /* MainInterface.storyboard in Resources */,
+				DE04784B1B26BC2D0036A959 /* Nexa-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -219,7 +219,7 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
         
-        var deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Burn" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
+        var deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "            " , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
             
             var tvShow = self.watchlist[indexPath.row] as PFObject
             
@@ -237,10 +237,10 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
                     self.defaults.setObject(true, forKey: "shouldWidgetUpdate") // tell widget to update the view
                 }
             })
-            
         })
         
-        deleteAction.backgroundColor = UIColor(red: 0.9, green: 0.93, blue: 0.95, alpha: 1.0)
+        //deleteAction.backgroundColor = UIColor(red: 0.9, green: 0.93, blue: 0.95, alpha: 1.0)
+        deleteAction.backgroundColor = UIColor(patternImage: UIImage(named: "delete-icon.png")!)
         
         return [deleteAction]
     }

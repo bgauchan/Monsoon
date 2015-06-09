@@ -23,7 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
         
         // change navigation item title color
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "Futura", size: 20)!]
+        if let font = UIFont(name: "NexaBold", size: 20) {
+            UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor(), NSFontAttributeName: font]
+        }
         
         // Parse Setup
         Parse.enableLocalDatastore()

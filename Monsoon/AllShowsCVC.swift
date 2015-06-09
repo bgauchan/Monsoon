@@ -57,7 +57,7 @@ class AllShowsCVC: UICollectionViewController, UISearchBarDelegate {
         let xCoordinate = self.view.frame.width * 0.05
         let width = self.view.frame.width * 0.90
         
-        noShowsFoundView = NoShowsFoundView(frame: CGRectMake(xCoordinate, 60, width, 350))
+        noShowsFoundView.frame = CGRectMake(xCoordinate, 60, width, 350)
         noShowsFoundView.showName = showName
         noShowsFoundView.addLabelForShow()
         

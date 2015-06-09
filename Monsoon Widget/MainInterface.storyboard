@@ -4,6 +4,14 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Nexa-Bold.otf">
+            <string>NexaBold</string>
+            <string>NexaBold</string>
+            <string>NexaBold</string>
+            <string>NexaBold</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--WatchlistTVC-->
         <scene sceneID="aIv-Aa-yXO">
@@ -27,11 +35,11 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Orange Is The New Black" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sVU-f2-3Mb">
-                                            <rect key="frame" x="47" y="5" width="200" height="21"/>
+                                            <rect key="frame" x="47" y="8" width="200" height="16"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="200" id="HhC-vc-pJS"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
+                                            <fontDescription key="fontDescription" name="NexaBold" family="Nexa Bold" pointSize="16"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -40,22 +48,22 @@
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="200" id="6hY-RS-4Tw"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
+                                            <fontDescription key="fontDescription" name="NexaBold" family="Nexa Bold" pointSize="12"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="days" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z9s-Je-wOq">
-                                            <rect key="frame" x="282" y="28" width="26" height="16"/>
-                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
+                                            <rect key="frame" x="280.5" y="29.5" width="27.5" height="12"/>
+                                            <fontDescription key="fontDescription" name="NexaBold" family="Nexa Bold" pointSize="12"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="202" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jMh-AJ-aQX">
-                                            <rect key="frame" x="278" y="5" width="34" height="24"/>
+                                            <rect key="frame" x="272" y="8" width="40" height="21"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="34" id="iyB-GV-441"/>
+                                                <constraint firstAttribute="width" constant="40" id="iyB-GV-441"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
+                                            <fontDescription key="fontDescription" name="NexaBold" family="Nexa Bold" pointSize="18"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -64,11 +72,11 @@
                                         <constraint firstItem="5tQ-CP-hDl" firstAttribute="top" secondItem="adj-ir-Lz5" secondAttribute="topMargin" constant="20" id="C84-aC-6zo"/>
                                         <constraint firstItem="jMh-AJ-aQX" firstAttribute="top" secondItem="sVU-f2-3Mb" secondAttribute="top" id="C9w-LA-0jX"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="jMh-AJ-aQX" secondAttribute="bottom" constant="12.5" id="Lx0-7P-mgs"/>
-                                        <constraint firstAttribute="bottom" secondItem="z9s-Je-wOq" secondAttribute="bottom" constant="5" id="NQb-vv-5ys"/>
+                                        <constraint firstAttribute="bottom" secondItem="z9s-Je-wOq" secondAttribute="bottom" constant="8" id="NQb-vv-5ys"/>
                                         <constraint firstItem="dhG-xF-A8F" firstAttribute="top" secondItem="adj-ir-Lz5" secondAttribute="top" constant="5" id="SIP-kE-4Ch"/>
                                         <constraint firstItem="dhG-xF-A8F" firstAttribute="leading" secondItem="adj-ir-Lz5" secondAttribute="leading" constant="5" id="b2a-be-aIT"/>
                                         <constraint firstItem="z9s-Je-wOq" firstAttribute="trailing" secondItem="adj-ir-Lz5" secondAttribute="trailing" constant="-12" id="ddx-vb-ZfD"/>
-                                        <constraint firstItem="sVU-f2-3Mb" firstAttribute="top" secondItem="adj-ir-Lz5" secondAttribute="top" constant="5" id="eY1-XO-sBQ"/>
+                                        <constraint firstItem="sVU-f2-3Mb" firstAttribute="top" secondItem="adj-ir-Lz5" secondAttribute="top" constant="8" id="eY1-XO-sBQ"/>
                                         <constraint firstAttribute="trailing" secondItem="jMh-AJ-aQX" secondAttribute="trailing" constant="8" id="iDM-hl-okr"/>
                                         <constraint firstItem="sVU-f2-3Mb" firstAttribute="leading" secondItem="dhG-xF-A8F" secondAttribute="trailing" constant="10" id="k8e-sv-G70"/>
                                         <constraint firstItem="5tQ-CP-hDl" firstAttribute="bottom" secondItem="dhG-xF-A8F" secondAttribute="bottom" id="lX6-vc-aTF"/>

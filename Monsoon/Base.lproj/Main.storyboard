@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E17e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pAC-8E-TuI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E26a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pAC-8E-TuI">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Nexa-Bold.otf">
+            <string>NexaBold</string>
+            <string>NexaBold</string>
+            <string>NexaBold</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Monsoon-->
         <scene sceneID="ufC-wZ-h7g">
@@ -92,9 +100,11 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marvel's Agents of S.H.I.E.L.D." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hnc-7n-DKP">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="130" id="MgM-vR-svf"/>
+                                                        <constraint firstAttribute="width" constant="130" id="MgM-vR-svf">
+                                                            <variation key="widthClass=compact" constant="140"/>
+                                                        </constraint>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                                    <fontDescription key="fontDescription" name="NexaBold" family="Nexa Bold" pointSize="20"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
@@ -115,7 +125,7 @@
                                                             <variation key="widthClass=compact" constant="115"/>
                                                         </constraint>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="13"/>
+                                                    <fontDescription key="fontDescription" name="Georgia-BoldItalic" family="Georgia" pointSize="13"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
@@ -129,36 +139,40 @@
                                                         </mask>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="132" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qd-yn-Emi">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-132" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qd-yn-Emi">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                                    <fontDescription key="fontDescription" name="NexaBold" family="Nexa Bold" pointSize="24"/>
                                                     <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="days" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUv-Kz-nZ9">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" name="NexaBold" family="Nexa Bold" pointSize="16"/>
                                                     <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="RUv-Kz-nZ9" firstAttribute="trailing" secondItem="MuT-Ea-oyh" secondAttribute="trailing" constant="-58" id="2zS-xX-0Vs">
-                                                    <variation key="widthClass=compact" constant="-12"/>
+                                                    <variation key="widthClass=compact" constant="-10"/>
                                                 </constraint>
                                                 <constraint firstItem="MuT-Ea-oyh" firstAttribute="top" secondItem="zip-W7-iUf" secondAttribute="top" constant="5" id="3Du-00-fSs">
                                                     <variation key="widthClass=compact" constant="3"/>
                                                 </constraint>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Vae-XU-8Pp" secondAttribute="trailing" constant="200" id="3QB-BW-Ahx"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Vae-XU-8Pp" secondAttribute="trailing" multiplier="2" constant="200" id="3QB-BW-Ahx">
+                                                    <variation key="widthClass=compact" constant="80"/>
+                                                </constraint>
                                                 <constraint firstItem="Vae-XU-8Pp" firstAttribute="bottom" secondItem="zip-W7-iUf" secondAttribute="bottomMargin" id="CiI-GF-so4"/>
                                                 <constraint firstItem="MuT-Ea-oyh" firstAttribute="leading" secondItem="E4o-Fx-UWW" secondAttribute="leading" constant="-120" id="Dx3-pJ-k9O">
                                                     <variation key="widthClass=compact" constant="-10"/>
                                                 </constraint>
                                                 <constraint firstItem="RUv-Kz-nZ9" firstAttribute="top" secondItem="7qd-yn-Emi" secondAttribute="bottom" id="JSb-6N-DFF">
-                                                    <variation key="widthClass=compact" constant="-6"/>
+                                                    <variation key="widthClass=compact" constant="0.0"/>
                                                 </constraint>
                                                 <constraint firstItem="MuT-Ea-oyh" firstAttribute="leading" secondItem="Vae-XU-8Pp" secondAttribute="trailing" id="UMK-FM-DRn"/>
-                                                <constraint firstItem="7qd-yn-Emi" firstAttribute="trailing" secondItem="MuT-Ea-oyh" secondAttribute="trailing" constant="-10" id="a5a-fO-fxY"/>
+                                                <constraint firstItem="7qd-yn-Emi" firstAttribute="trailing" secondItem="MuT-Ea-oyh" secondAttribute="trailing" constant="-10" id="a5a-fO-fxY">
+                                                    <variation key="widthClass=compact" constant="-8"/>
+                                                </constraint>
                                                 <constraint firstAttribute="bottom" secondItem="MuT-Ea-oyh" secondAttribute="bottom" constant="5" id="apG-iG-6Fg">
                                                     <variation key="widthClass=compact" constant="0.0"/>
                                                 </constraint>
@@ -166,7 +180,7 @@
                                                     <variation key="widthClass=compact" constant="-10"/>
                                                 </constraint>
                                                 <constraint firstItem="MuT-Ea-oyh" firstAttribute="top" secondItem="7qd-yn-Emi" secondAttribute="top" constant="-66" id="gvM-oc-53F">
-                                                    <variation key="widthClass=compact" constant="-20"/>
+                                                    <variation key="widthClass=compact" constant="-32"/>
                                                 </constraint>
                                                 <constraint firstItem="MuT-Ea-oyh" firstAttribute="leading" secondItem="Hnc-7n-DKP" secondAttribute="leading" constant="10" id="hei-NG-Mf7">
                                                     <variation key="widthClass=compact" constant="-10"/>
@@ -177,8 +191,8 @@
                                                 <constraint firstItem="Vae-XU-8Pp" firstAttribute="top" secondItem="zip-W7-iUf" secondAttribute="top" constant="80" id="ojT-94-ELl">
                                                     <variation key="widthClass=compact" constant="3"/>
                                                 </constraint>
-                                                <constraint firstItem="MuT-Ea-oyh" firstAttribute="top" secondItem="Hnc-7n-DKP" secondAttribute="top" constant="-62" id="w7u-dX-Ieg">
-                                                    <variation key="widthClass=compact" constant="-5"/>
+                                                <constraint firstItem="MuT-Ea-oyh" firstAttribute="topMargin" secondItem="Hnc-7n-DKP" secondAttribute="top" constant="-62" id="w7u-dX-Ieg">
+                                                    <variation key="widthClass=compact" constant="-2"/>
                                                 </constraint>
                                                 <constraint firstAttribute="trailing" secondItem="MuT-Ea-oyh" secondAttribute="trailing" constant="5" id="zy7-8y-fs3">
                                                     <variation key="widthClass=compact" constant="4"/>
@@ -486,8 +500,8 @@
     <resources>
         <image name="add-show-icon" width="16" height="16"/>
         <image name="close-icon" width="15" height="16"/>
-        <image name="off-season-icon" width="134" height="20"/>
-        <image name="peak-season-icon" width="139" height="20"/>
+        <image name="off-season-icon" width="133" height="20"/>
+        <image name="peak-season-icon" width="141" height="20"/>
         <image name="settings-icon" width="18" height="18"/>
     </resources>
 </document>

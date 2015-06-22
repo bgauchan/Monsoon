@@ -26,7 +26,7 @@ class NoShowsFoundView: UIView {
         let bundle = NSBundle(forClass: self.dynamicType)
         view = bundle.loadNibNamed("NoShowsFoundView", owner: self, options: nil)[0] as! NoShowsFoundView
         view.frame = bounds
-        view.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+        view.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight]
         
         addSubview(view)
         
@@ -43,9 +43,9 @@ class NoShowsFoundView: UIView {
     
     func addLabelForShow() {
         
-        var labelText = NSMutableAttributedString(string: "No show named ", attributes: nil)
+        let labelText = NSMutableAttributedString(string: "No show named ", attributes: nil)
         
-        var show = NSMutableAttributedString(string: showName, attributes: nil)
+        let show = NSMutableAttributedString(string: showName, attributes: nil)
         show.addAttribute(NSForegroundColorAttributeName, value: UIColor.cyanColor(), range: NSRange(location:0,length:show.length))
         
         labelText.appendAttributedString(show)
@@ -57,8 +57,8 @@ class NoShowsFoundView: UIView {
     @IBAction func requestToAddShow(sender: AnyObject) {
         
         // Add the show searched (but not found) as a request in Parse
-        if count(showName) > 0 {
-            var request = PFObject(className: "Request")
+        if showName.characters.count > 0 {
+            let request = PFObject(className: "Request")
             request["tvShow"] = showName
             
             request.saveInBackgroundWithBlock({ (success: Bool, error: NSError?) -> Void in

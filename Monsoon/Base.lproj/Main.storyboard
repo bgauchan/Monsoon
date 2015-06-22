@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E26a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pAC-8E-TuI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14E36b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pAC-8E-TuI">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Nexa-Bold.otf">
@@ -58,6 +58,7 @@
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="watchlistCell" rowHeight="103" id="eJN-Cv-hl5" customClass="WatchlistCell" customModule="Monsoon" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eJN-Cv-hl5" id="zip-W7-iUf">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="103"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vae-XU-8Pp" customClass="PFImageView">
@@ -81,6 +82,9 @@
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                                     <color key="backgroundColor" red="0.0078431372549019607" green="0.0078431372549019607" blue="0.16078431372549021" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="width" constant="240" id="Ovl-zm-erx">
+                                                            <variation key="widthClass=compact" constant="215"/>
+                                                        </constraint>
                                                         <constraint firstAttribute="height" constant="100" id="oWK-eu-eJ4"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -88,11 +92,13 @@
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
+                                                            <exclude reference="Ovl-zm-erx"/>
                                                             <exclude reference="oWK-eu-eJ4"/>
                                                         </mask>
                                                     </variation>
                                                     <variation key="widthClass=compact">
                                                         <mask key="constraints">
+                                                            <include reference="Ovl-zm-erx"/>
                                                             <include reference="oWK-eu-eJ4"/>
                                                         </mask>
                                                     </variation>
@@ -122,7 +128,7 @@
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="110" id="lch-ZI-bQS">
-                                                            <variation key="widthClass=compact" constant="115"/>
+                                                            <variation key="widthClass=compact" constant="130"/>
                                                         </constraint>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Georgia-BoldItalic" family="Georgia" pointSize="13"/>
@@ -159,9 +165,6 @@
                                                 <constraint firstItem="MuT-Ea-oyh" firstAttribute="top" secondItem="zip-W7-iUf" secondAttribute="top" constant="5" id="3Du-00-fSs">
                                                     <variation key="widthClass=compact" constant="3"/>
                                                 </constraint>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Vae-XU-8Pp" secondAttribute="trailing" multiplier="2" constant="200" id="3QB-BW-Ahx">
-                                                    <variation key="widthClass=compact" constant="80"/>
-                                                </constraint>
                                                 <constraint firstItem="Vae-XU-8Pp" firstAttribute="bottom" secondItem="zip-W7-iUf" secondAttribute="bottomMargin" id="CiI-GF-so4"/>
                                                 <constraint firstItem="MuT-Ea-oyh" firstAttribute="leading" secondItem="E4o-Fx-UWW" secondAttribute="leading" constant="-120" id="Dx3-pJ-k9O">
                                                     <variation key="widthClass=compact" constant="-10"/>
@@ -192,7 +195,7 @@
                                                     <variation key="widthClass=compact" constant="3"/>
                                                 </constraint>
                                                 <constraint firstItem="MuT-Ea-oyh" firstAttribute="topMargin" secondItem="Hnc-7n-DKP" secondAttribute="top" constant="-62" id="w7u-dX-Ieg">
-                                                    <variation key="widthClass=compact" constant="-2"/>
+                                                    <variation key="widthClass=compact" constant="-5"/>
                                                 </constraint>
                                                 <constraint firstAttribute="trailing" secondItem="MuT-Ea-oyh" secondAttribute="trailing" constant="5" id="zy7-8y-fs3">
                                                     <variation key="widthClass=compact" constant="4"/>
@@ -220,7 +223,6 @@
                                                     <exclude reference="zy7-8y-fs3"/>
                                                     <exclude reference="2zS-xX-0Vs"/>
                                                     <exclude reference="JSb-6N-DFF"/>
-                                                    <exclude reference="3QB-BW-Ahx"/>
                                                     <exclude reference="CiI-GF-so4"/>
                                                     <exclude reference="o5T-bX-b9f"/>
                                                     <exclude reference="ojT-94-ELl"/>
@@ -248,7 +250,6 @@
                                                     <include reference="zy7-8y-fs3"/>
                                                     <include reference="2zS-xX-0Vs"/>
                                                     <include reference="JSb-6N-DFF"/>
-                                                    <include reference="3QB-BW-Ahx"/>
                                                     <exclude reference="CiI-GF-so4"/>
                                                     <include reference="o5T-bX-b9f"/>
                                                     <include reference="ojT-94-ELl"/>
@@ -352,7 +353,7 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="tvShowCell" id="EDJ-QZ-Dtm" customClass="TvShowCell" customModule="Monsoon" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <rect key="frame" x="0.0" y="114" width="100" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="100" height="150"/>

@@ -51,7 +51,7 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
             // only fetch from the server if it's been more than an hour
             if currentDate.timeIntervalSinceDate(lastFetchedDate) > 3600 {
                 
-                var query: PFQuery = PFQuery(className: "TvShow")
+                let query: PFQuery = PFQuery(className: "TvShow")
                 query.fromLocalDatastore()
                 
                 // First we get all the seriesID of the shows that are saved/pinned. Then we use that array
@@ -61,7 +61,7 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
                     
                     if objects!.count > 0 {
                         let shows = objects as! [PFObject]
-                        var seriesIdArray = shows.map { $0.objectForKey("seriesID")! }
+                        let seriesIdArray = shows.map { $0.objectForKey("seriesID")! }
                         
                         self.updateWatchlist(seriesIdArray, lastFetchedDate: lastFetchedDate)
                     }
@@ -72,7 +72,7 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
                 defaults.synchronize()
             }
         } else {
-            println("Not set up yet...")
+            print("Not set up yet...")
             
             // if last fetched date doesn't exist in NSUserDefaults, create one
             defaults.setObject(currentDate, forKey: "lastFetchedDate")
@@ -87,7 +87,7 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     **/
     func fetchWatchlist(includeEndedShows: Bool? = nil) {     // bool? = nil lets us declare optional paramteres
         
-        var query: PFQuery = PFQuery(className: "TvShow")
+        let query: PFQuery = PFQuery(className: "TvShow")
         
         // whether to show the ended tv shows based on tab
         if includeEndedShows == nil {
@@ -116,9 +116,9 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     **/
     func updateWatchlist(seriesIdArray:NSArray, lastFetchedDate: NSDate) {
         
-        println("updating shows...")
+        print("updating shows...")
         
-        var query: PFQuery = PFQuery(className: "TvShow")
+        let query: PFQuery = PFQuery(className: "TvShow")
         query.whereKey("seriesID", containedIn: seriesIdArray as Array <AnyObject>)
         //query.whereKey("updatedAt", greaterThan: lastFetchedDate)
 
@@ -136,13 +136,13 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
                     (ignored: BFTask!) -> AnyObject! in
                     
                     for show in shows as! Array <AnyObject> {
-                        var tvShow = show as! PFObject
+                        let tvShow = show as! PFObject
                         
                         NotificationManager.removeNotificationIfExists(tvShow["seriesID"] as! Int) //remove the old notification
                         NotificationManager.scheduleNotification(tvShow) // and add a new updated one
                     }
                     
-                    println("finsihed updated notifications")
+                    print("finsihed updated notifications")
                     
                     self.defaults.setObject(true, forKey: "shouldWidgetUpdate") // tell widget to update the view
                     
@@ -156,11 +156,11 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     func sortShowsByTimeLeft() {
         
         // sort by dates closest to day
-        self.watchlist.sort {
+        self.watchlist.sortInPlace {
             tvShow1, tvShow2 in
             
-            var (startOrEnd1: String, time1: Int) = Helper.getDateStringAndTimeLeft(tvShow1)
-            var (startOrEnd2: String, time2: Int) = Helper.getDateStringAndTimeLeft(tvShow2)
+            let (_, time1): (String, Int) = Helper.getDateStringAndTimeLeft(tvShow1)
+            let (_, time2): (String, Int) = Helper.getDateStringAndTimeLeft(tvShow2)
             
             return time1 < time2
         }
@@ -179,9 +179,9 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("watchlistCell", forIndexPath: indexPath) as! WatchlistCell
         
-        var tvShow = self.watchlist[indexPath.row] as PFObject
+        let tvShow = self.watchlist[indexPath.row] as PFObject
         
-        var (startOrEnd: String, timeLeft: Int) = Helper.getDateStringAndTimeLeft(tvShow)
+        let (startOrEnd, timeLeft): (String, Int) = Helper.getDateStringAndTimeLeft(tvShow)
         cell.startOrEndDate.text = startOrEnd
         
         if timeLeft >= 0 && timeLeft < 10 {
@@ -217,11 +217,11 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
     }
     
-    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
+    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
         
-        var deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "            " , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
+        let deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "            " , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
             
-            var tvShow = self.watchlist[indexPath.row] as PFObject
+            let tvShow = self.watchlist[indexPath.row] as PFObject
             
             // unpin the show
             tvShow.unpinInBackgroundWithName("watchlist", block: { (success: Bool, error: NSError?) -> Void in
@@ -262,7 +262,7 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         archivedBtn.tintColor = UIColor.orangeColor()
         watchlistBtn.tintColor = UIColor.lightGrayColor()
         
-        fetchWatchlist(includeEndedShows: true)
+        fetchWatchlist(true)
     }
     
     @IBAction func showSettingsView(sender: AnyObject) {
@@ -272,10 +272,10 @@ class WatchlistVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
             
             PFObject.unpinAllInBackground(self.watchlist, withName: "watchlist", block: { (success: Bool, error: NSError?) -> Void in
                 if success {
-                    print("Cleared all shows...\n")
+                    print("Cleared all shows...\n", appendNewline: false)
                     self.defaults.setObject(true, forKey: "shouldWidgetUpdate") // tell widget to update the view
                 } else {
-                    print("Unpin unsuccessful \n")
+                    print("Unpin unsuccessful \n", appendNewline: false)
                 }
             })
             

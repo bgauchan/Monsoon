@@ -31,7 +31,7 @@ class AllShowsCVC: UICollectionViewController, UISearchBarDelegate {
     
     func fetchShows(searchTerm: String? = nil) {
         
-        var query: PFQuery = PFQuery(className: "TvShow")
+        let query: PFQuery = PFQuery(className: "TvShow")
         query.whereKeyExists("coverImage")
         query.orderByDescending("updatedAt")
         
@@ -41,7 +41,7 @@ class AllShowsCVC: UICollectionViewController, UISearchBarDelegate {
         
         query.findObjectsInBackgroundWithBlock({(NSArray objects, NSError error) in
             if error != nil {
-                print(error)
+                print(error, appendNewline: false)
             } else {
                 self.showList = objects as! [PFObject]
                 self.collectionView?.reloadData()
@@ -82,7 +82,7 @@ class AllShowsCVC: UICollectionViewController, UISearchBarDelegate {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! TvShowCell
         
         if let tvShow = self.showList[indexPath.row] as PFObject? {
-            var thumbnail = tvShow["coverImage"] as! PFFile
+            let thumbnail = tvShow["coverImage"] as! PFFile
             cell.coverImageView.file = thumbnail
             cell.coverImageView.loadInBackground { (coverImage: UIImage?, error: NSError?) -> Void in
                 if error != nil {
@@ -96,13 +96,12 @@ class AllShowsCVC: UICollectionViewController, UISearchBarDelegate {
     }
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let tvShow = self.showList[indexPath.row] as PFObject
         
-        var query: PFQuery = PFQuery(className: "TvShow")
+        let tvShow = self.showList[indexPath.row] as PFObject
         
         tvShow.pinInBackgroundWithName("watchlist", block: { (success: Bool, error: NSError?) -> Void in
             if success {
-                println("Pinning was successful")
+                print("Pinning was successful")
                 
                 // set up a notification for the tv show
                 NotificationManager.scheduleNotification(tvShow)
@@ -111,7 +110,7 @@ class AllShowsCVC: UICollectionViewController, UISearchBarDelegate {
                 
                 self.dismissViewControllerAnimated(true, completion: nil)
             } else {
-                print("\nPinning wasn't successful!")
+                print("\nPinning wasn't successful!", appendNewline: false)
             }
         })
     }
@@ -132,8 +131,8 @@ class AllShowsCVC: UICollectionViewController, UISearchBarDelegate {
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         
-        var width = self.view.frame.size.width/3.0
-        var height = self.view.frame.size.width/2.0
+        let width = self.view.frame.size.width/3.0
+        let height = self.view.frame.size.width/2.0
         
         return CGSize(width: width - 2, height: height)
     }
@@ -154,18 +153,18 @@ class AllShowsCVC: UICollectionViewController, UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         isSearchResultsShown = true
-        fetchShows(searchTerm: searchBar.text)
+        fetchShows(searchBar.text)
     }
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-        if count(searchText) == 0 && isSearchResultsShown {
+        if searchText.characters.count == 0 && isSearchResultsShown {
             fetchShows()
             isSearchResultsShown = false
         }
     }
     
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
-        println("cancel")
+        print("cancel")
     }
     
     override func didReceiveMemoryWarning() {

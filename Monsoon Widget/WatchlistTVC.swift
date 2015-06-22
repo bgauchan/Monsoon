@@ -37,7 +37,7 @@ class WatchlistTVC: UITableViewController, NCWidgetProviding {
     **/
     func fetchWatchlist() {   
         
-        var query: PFQuery = PFQuery(className: "TvShow")
+        let query: PFQuery = PFQuery(className: "TvShow")
         query.whereKey("seasonEndDate", greaterThan: NSDate())
         
         query.limit = 8
@@ -72,11 +72,11 @@ class WatchlistTVC: UITableViewController, NCWidgetProviding {
     func sortShowsByTimeLeft() {
         
         // sort by dates closest to day
-        self.watchlist.sort {
+        self.watchlist.sortInPlace {
             tvShow1, tvShow2 in
             
-            var (startOrEnd1: String, time1: Int) = Helper.getDateStringAndTimeLeft(tvShow1)
-            var (startOrEnd2: String, time2: Int) = Helper.getDateStringAndTimeLeft(tvShow2)
+            let (_, time1): (String, Int) = Helper.getDateStringAndTimeLeft(tvShow1)
+            let (_, time2): (String, Int) = Helper.getDateStringAndTimeLeft(tvShow2)
             
             return time1 < time2
         }
@@ -86,7 +86,7 @@ class WatchlistTVC: UITableViewController, NCWidgetProviding {
         super.didReceiveMemoryWarning()
     }
     
-    func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)!) {
+    func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)) {
         // Perform any setup necessary in order to update the view.
 
         // If an error is encountered, use NCUpdateResult.Failed
@@ -94,10 +94,10 @@ class WatchlistTVC: UITableViewController, NCWidgetProviding {
         // If there's an update, use NCUpdateResult.NewData
         
         if let widgetShouldUpdate = defaults.objectForKey("shouldWidgetUpdate") as? Bool  {
-            println("update process starting..")
+            print("update process starting..")
             if widgetShouldUpdate {
                 
-                println("updating view due to widgetShouldUpdate")
+                print("updating view due to widgetShouldUpdate")
                 
                 defaults.setObject(false, forKey: "shouldWidgetUpdate")
                 defaults.synchronize()
@@ -126,11 +126,11 @@ class WatchlistTVC: UITableViewController, NCWidgetProviding {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("watchlistWidgetCell", forIndexPath: indexPath) as! WatchlistCell
         
-        var tvShow = self.watchlist[indexPath.row] as PFObject
+        let tvShow = self.watchlist[indexPath.row] as PFObject
         
         cell.widgetShowName.text = tvShow["name"] as? String
         
-        var (startOrEnd: String, timeLeft: Int) = Helper.getDateStringAndTimeLeft(tvShow)
+        let (startOrEnd, timeLeft): (String, Int) = Helper.getDateStringAndTimeLeft(tvShow)
         cell.widgetCurrentSeason.text = startOrEnd
         
         if timeLeft >= 0 && timeLeft < 10 {

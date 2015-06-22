@@ -13,10 +13,13 @@ import Parse
 class NotificationManager {
     
     class func checkIfNotificationExists() {
-        for notification in UIApplication.sharedApplication().scheduledLocalNotifications {
+        
+        let scheduledLocalNotifications = UIApplication.sharedApplication().scheduledLocalNotifications
+        
+        for notification in scheduledLocalNotifications! {
             
-            if let info = notification.userInfo as [NSObject: AnyObject]? {
-                println("\(notification.alertBody) => \(notification.fireDate)")
+            if let _ = notification.userInfo as [NSObject: AnyObject]? {
+                print("\(notification.alertBody) => \(notification.fireDate)")
             }
         }
     }
@@ -32,7 +35,7 @@ class NotificationManager {
         
         // don't schedule notifications if there is no notification date set (i.e. tv shows has ended)
         if notificationDate != nil {
-            var notification = UILocalNotification()
+            let notification = UILocalNotification()
             notification.alertBody = notificationText
             notification.alertAction = "open"
             notification.fireDate = notificationDate
@@ -42,17 +45,17 @@ class NotificationManager {
             notification.category = "watchlist"
             
             UIApplication.sharedApplication().scheduleLocalNotification(notification)
-            println("notification added!")
+            print("notification added!")
         }
     }
     
     class func removeNotificationIfExists(tvShowID: Int) {
-        for scheduledNotification in UIApplication.sharedApplication().scheduledLocalNotifications {
+        for scheduledNotification in UIApplication.sharedApplication().scheduledLocalNotifications! {
             
-            var notification = scheduledNotification as! UILocalNotification
+            let notification = scheduledNotification as UILocalNotification
             
             if let info = notification.userInfo as [NSObject: AnyObject]? {
-                var storedSeriesID = info["tvShowID"] as! Int
+                let storedSeriesID = info["tvShowID"] as! Int
                 
                 if tvShowID == storedSeriesID {
                     UIApplication.sharedApplication().cancelLocalNotification(notification)
